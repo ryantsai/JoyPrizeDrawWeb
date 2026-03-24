@@ -1,0 +1,82 @@
+window.landingMessages = window.landingMessages || {};
+window.landingMessages["zh-TW"] = {
+  metaTitle: "Joy Prize Draw | 讓抽獎揭曉更有舞台感",
+  metaDescription: "適合課堂、派對、直播與現場活動的精緻抽獎應用。",
+  nav: { modes: "模式", flow: "流程", organizers: "主辦工具", faq: "常見問題" },
+  languageLabel: "語言",
+  heroEyebrow: "適用於課堂、派對、直播與現場活動的抽獎應用",
+  heroTitle: '讓每一次揭曉，都像<span class="accent">真正的主秀時刻</span>。',
+  heroLead:
+    "從彩色轉盤、扭蛋、刮刮卡，到抽獎球、老虎機、梯子路徑與快速隨機模式，Joy Prize Draw 把原本普通的隨機抽選，做成更有記憶點的揭曉體驗。",
+  heroPrimaryCta: "查看抽獎模式",
+  heroSecondaryCta: "查看主辦功能",
+  heroNote:
+    "目前版本使用應用內現有素材。之後若想進一步提高轉換率，建議補上 2 到 3 張真實操作截圖或裝置展示圖。",
+  visualChipTop: "8 種抽選風格",
+  visualChipBottom: "支援方案包、歷史與多語介面",
+  stats: [
+    { value: "8", label: "種揭曉方式" },
+    { value: "可重用", label: "項目包與參與者名單" },
+    { value: "10", label: "個內建支援地區語系" },
+  ],
+  modesEyebrow: "抽獎模式",
+  modesTitle: "用 8 種不同節奏決定贏家，現場氣氛不掉線。",
+  modesIntro:
+    "無論是課堂點名、直播抽獎，還是現場活動，都能依情境選擇最合適的揭曉方式。",
+  modes: [
+    { name: "轉盤", body: "經典又直覺的揭曉方式，停下來的那一刻很有份量。", image: "assets/img/prizewheel_thumbnail.png" },
+    { name: "扭蛋", body: "把掉落與打開膠囊的過程也變成表演的一部分。", image: "assets/img/gacha_thumbnail.png" },
+    { name: "盲盒", body: "保留未知感，讓最後一下揭曉更有驚喜。", image: "assets/img/blindbox_thumbnail.png" },
+    { name: "抽獎球", body: "用抽球動態做出更像活動舞台的抽選節奏。", image: "assets/img/lottery_thumbnail.png" },
+    { name: "梯子", body: "沿著路徑往下走，像遊戲節目一樣有過程感。", image: "assets/img/ladder_thumbnail.png" },
+    { name: "老虎機", body: "三軸轉動加上停格節奏，讓中獎瞬間更有爽感。", image: "assets/img/slots_thumbnail.png" },
+    { name: "刮刮卡", body: "用手勢揭開表面，讓參與感直接發生在螢幕上。", image: "assets/img/scratch_thumbnail.png" },
+    { name: "隨機", body: "需要快速決定時，直接給出答案，不拖節奏。", symbol: "★" },
+  ],
+  workflowEyebrow: "快速上手",
+  workflowTitle: "從清單到揭曉，只需要三個短步驟。",
+  workflowIntro:
+    "先準備項目，再選演出，最後留下結果。流程簡潔，現場不會被工具拖慢。",
+  workflowSteps: [
+    { title: "載入項目", body: "可手動新增，也能貼上整批名單，或直接使用之前存好的方案包。" },
+    { title: "選擇氣氛", body: "依場合改用轉盤、扭蛋、刮刮卡、老虎機、梯子、抽獎球、盲盒或快速隨機模式。" },
+    { title: "揭曉並記錄", body: "中獎記錄、重抽、移除已抽中項目都能接著處理，流程不會卡住。" },
+  ],
+  organizersEyebrow: "主辦工具",
+  organizersTitle: "不只好看，也真的幫主辦者把流程控住。",
+  organizersIntro:
+    "可重用方案包、參與者模式、得獎限制、批次輸入、匯出與歷史管理，讓它不只是演出工具，也是現場工作流程的一部分。",
+  features: [
+    { title: "可重用項目方案包", body: "把常用獎項組合存起來，下次活動可以直接重用。" },
+    { title: "參與者模式", body: "把獎品池與參與者池分開管理，更適合有規則的抽選流程。" },
+    { title: "中獎歷史", body: "清楚記錄誰中了什麼與時間點，方便回顧與分享。" },
+    { title: "批次匯入與編號生成", body: "貼上名單或自動產生連號票券，大型活動也能快速準備。" },
+    { title: "表情、顏色與圖片標示", body: "讓每個項目更容易辨識，也更有個性。" },
+    { title: "匯出與控制機制", body: "支援 CSV/TXT 匯出、得獎限制與移除已中獎項目，避免重複結果。" },
+  ],
+  audiencesEyebrow: "適合的場景",
+  audiencesTitle: "適合需要公平感，也想要現場有亮點的時刻。",
+  audiencesIntro: "夠活潑，卻不失可靠，能同時照顧體驗與流程。",
+  audiences: [
+    { title: "課堂與社團", body: "點名、分組、複習遊戲與小獎勵抽選都能快速進行。" },
+    { title: "直播與舞台活動", body: "畫面感夠強，觀眾看得清楚，主辦方也能掌握中獎流程。" },
+    { title: "派對與贈品抽獎", body: "讓小獎品也能有一個像正式揭曉的時刻。" },
+  ],
+  faqEyebrow: "常見問題",
+  faqTitle: "在發佈或分享前，通常會想先確認這些事。",
+  faqs: [
+    { q: "這個頁面可以直接部署嗎？", a: "可以。整個 landing page 都是靜態 HTML、CSS、JavaScript 與圖片資產，可直接部署到多數靜態主機服務。" },
+    { q: "語言切換怎麼運作？", a: "首次造訪時會讀取瀏覽器語言，自動對應到支援語系；使用者手動切換後，也會記住這個選擇。" },
+    { q: "之後最值得升級的素材是什麼？", a: "目前內建插圖已經足夠專業；若想提高說服力，建議之後加上真實畫面截圖、裝置 mockup 或短錄屏。" },
+    { q: "頁面有對應現在的應用功能嗎？", a: "有。文案與結構都是依照目前支援的語系、抽獎模式、方案包、參與者流程、匯出與歷史功能撰寫。" },
+  ],
+  ctaEyebrow: "可直接延伸的前端",
+  ctaTitle: "先用這個版本上線，之後再把商店連結與新素材補進來。",
+  ctaBody:
+    "強主視覺、模式展示、主辦功能證明、多語切換與純靜態部署都已備齊，之後擴充不需要重做整套設計。",
+  ctaPrimary: "回到首頁主視覺",
+  ctaSecondary: "重新查看模式",
+  ctaNote: "等你拿到平台連結與新截圖後，這個頁面很容易繼續升級。",
+  footerTagline: "為課堂、派對、直播與現場活動打造的精緻抽獎體驗。",
+  footerMeta: "靜態 landing page 套件 • 2026",
+};

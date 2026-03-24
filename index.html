@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover"
+    />
+    <title>Joy Prize Draw</title>
+    <meta
+      name="description"
+      content="Spin the wheel, reveal winners, and run unforgettable prize draws with Joy Prize Draw."
+    />
+    <meta
+      property="og:title"
+      content="Joy Prize Draw | Prize reveals with real stage presence"
+    />
+    <meta
+      property="og:description"
+      content="A polished prize draw app for classrooms, parties, streams, and live events."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="assets/img/store_banner.png" />
+    <meta name="theme-color" content="#0d1230" />
+    <link rel="icon" type="image/png" href="assets/img/app_icon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;700;800&family=Noto+Sans+JP:wght@400;500;700;800&family=Noto+Sans+KR:wght@400;500;700;800&family=Noto+Sans+SC:wght@400;500;700;800&family=Noto+Sans+TC:wght@400;500;700;800&family=Space+Grotesk:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="site-header">
+        <a class="brand" href="#top" aria-label="Joy Prize Draw home">
+          <img src="assets/img/logo.png" alt="" />
+          <span>Joy Prize Draw</span>
+        </a>
+        <nav class="site-nav" aria-label="Primary">
+          <a id="nav-modes" href="#modes">Modes</a>
+          <a id="nav-flow" href="#workflow">Workflow</a>
+          <a id="nav-organizers" href="#organizers">Organizers</a>
+          <a id="nav-faq" href="#faq">FAQ</a>
+        </nav>
+        <div class="language-control">
+          <label id="language-label" for="locale-select">Language</label>
+          <select id="locale-select" aria-labelledby="language-label"></select>
+        </div>
+      </header>
+
+      <main>
+        <section class="hero" id="top">
+          <div class="hero-noise"></div>
+          <div class="hero-backdrop"></div>
+          <div class="hero-grid container">
+            <div class="hero-copy reveal reveal-visible">
+              <p class="eyebrow" id="hero-eyebrow"></p>
+              <h1 id="hero-title"></h1>
+              <p class="hero-lead" id="hero-lead"></p>
+              <div class="hero-actions">
+                <a class="button button-primary" id="hero-primary-cta" href="#modes"></a>
+                <a class="button button-secondary" id="hero-secondary-cta" href="#organizers"></a>
+              </div>
+              <ul class="hero-stats" id="hero-stats"></ul>
+              <p class="hero-note" id="hero-note"></p>
+            </div>
+
+            <div class="hero-visual reveal reveal-visible" aria-hidden="true">
+              <div class="visual-halo halo-one"></div>
+              <div class="visual-halo halo-two"></div>
+              <img class="visual-banner" src="assets/img/store_banner.png" alt="" />
+              <img class="visual-wheel" src="assets/img/prize_wheel.png" alt="" />
+              <img
+                class="visual-machine visual-gacha"
+                src="assets/img/gacha_machine.png"
+                alt=""
+              />
+              <img
+                class="visual-machine visual-slot"
+                src="assets/img/slot_machine.png"
+                alt=""
+              />
+              <img
+                class="visual-machine visual-lottery"
+                src="assets/img/lottery_machine.png"
+                alt=""
+              />
+              <div class="visual-chip chip-top" id="visual-chip-top"></div>
+              <div class="visual-chip chip-bottom" id="visual-chip-bottom"></div>
+            </div>
+          </div>
+        </section>
+
+        <section class="section section-modes container reveal" id="modes">
+          <div class="section-head">
+            <p class="eyebrow" id="modes-eyebrow"></p>
+            <h2 id="modes-title"></h2>
+            <p id="modes-intro"></p>
+          </div>
+          <div class="mode-grid" id="mode-grid"></div>
+        </section>
+
+        <section class="section section-workflow reveal" id="workflow">
+          <div class="container workflow-grid">
+            <div class="workflow-copy">
+              <p class="eyebrow" id="workflow-eyebrow"></p>
+              <h2 id="workflow-title"></h2>
+              <p class="section-lead" id="workflow-intro"></p>
+              <ol class="story-steps" id="workflow-steps"></ol>
+            </div>
+            <div class="workflow-media" aria-hidden="true">
+              <img class="workflow-thumbnail thumb-wheel" src="assets/img/prizewheel_thumbnail.png" alt="" />
+              <img class="workflow-thumbnail thumb-gacha" src="assets/img/gacha_thumbnail.png" alt="" />
+              <img class="workflow-thumbnail thumb-slot" src="assets/img/slots_thumbnail.png" alt="" />
+              <img class="workflow-thumbnail thumb-lottery" src="assets/img/lottery_thumbnail.png" alt="" />
+            </div>
+          </div>
+        </section>
+
+        <section class="section section-organizers container reveal" id="organizers">
+          <div class="organizer-media" aria-hidden="true">
+            <img class="organizer-main" src="assets/img/store_banner.png" alt="" />
+            <div class="organizer-strip">
+              <img src="assets/img/blindbox_thumbnail.png" alt="" />
+              <img src="assets/img/ladder_thumbnail.png" alt="" />
+              <img src="assets/img/scratch_thumbnail.png" alt="" />
+            </div>
+          </div>
+          <div class="organizer-copy">
+            <p class="eyebrow" id="organizers-eyebrow"></p>
+            <h2 id="organizers-title"></h2>
+            <p class="section-lead" id="organizers-intro"></p>
+            <div class="feature-list" id="feature-list"></div>
+          </div>
+        </section>
+
+        <section class="section section-audiences container reveal" id="audiences">
+          <div class="section-head compact">
+            <p class="eyebrow" id="audiences-eyebrow"></p>
+            <h2 id="audiences-title"></h2>
+            <p id="audiences-intro"></p>
+          </div>
+          <div class="audience-grid" id="audience-grid"></div>
+        </section>
+
+        <section class="section section-faq container reveal" id="faq">
+          <div class="section-head compact">
+            <p class="eyebrow" id="faq-eyebrow"></p>
+            <h2 id="faq-title"></h2>
+          </div>
+          <div class="faq-list" id="faq-list"></div>
+        </section>
+
+        <section class="section section-cta reveal" id="publish">
+          <div class="container cta-panel">
+            <p class="eyebrow" id="cta-eyebrow"></p>
+            <h2 id="cta-title"></h2>
+            <p class="section-lead" id="cta-body"></p>
+            <div class="hero-actions">
+              <a class="button button-primary" id="cta-primary" href="#top"></a>
+              <a class="button button-secondary" id="cta-secondary" href="#modes"></a>
+            </div>
+            <p class="cta-note" id="cta-note"></p>
+          </div>
+        </section>
+      </main>
+
+      <footer class="site-footer container">
+        <div>
+          <p class="footer-brand">Joy Prize Draw</p>
+          <p id="footer-tagline"></p>
+        </div>
+        <p id="footer-meta"></p>
+      </footer>
+    </div>
+
+    <script src="locales/en.js"></script>
+    <script src="locales/ja.js"></script>
+    <script src="locales/zh.js"></script>
+    <script src="locales/zh-cn.js"></script>
+    <script src="locales/zh-tw.js"></script>
+    <script src="locales/ko.js"></script>
+    <script src="locales/fr.js"></script>
+    <script src="locales/de.js"></script>
+    <script src="locales/es.js"></script>
+    <script src="locales/it.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
