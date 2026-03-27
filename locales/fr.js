@@ -18,7 +18,7 @@ window.landingMessages.fr = {
   visualChipBottom: "Packs, historique et interface localisee",
   stats: [
     { value: "8", label: "facons de reveler un gagnant" },
-    { value: "Reutilisable", label: "packs d'elements et listes de participants" },
+    { value: "15", label: "packs integres a charger" },
     { value: "10", label: "locales deja prises en charge" },
   ],
   modesEyebrow: "Modes de tirage",
@@ -50,7 +50,7 @@ window.landingMessages.fr = {
     "Packs reutilisables, mode participants, limites de gain, import massif, export et historique : l'application soutient aussi la logistique du tirage.",
   features: [
     { title: "Packs reutilisables", body: "Conservez vos listes de lots recurrents pour les classes, lives ou evenements repetes." },
-    { title: "Packs de demarrage integres", body: "Lancez-vous directement avec des packs prets a l'emploi : cartes de tarot, jeux de poker et plus — aucune configuration necessaire." },
+    { title: "Packs de demarrage integres", body: "Demarrez avec 15 packs integres : tarot, cartes a jouer, reponses Magic 8 Ball, debuts d'histoires, idees de dejeuner, defis photo et plus encore — aucun parametre a preparer." },
     { title: "Adorable hamster compagnon", body: "Un petit hamster joyeux accompagne chaque tirage, ajoutant chaleur et sourires a chaque revelation (disponible dans certains modes)." },
     { title: "Mode participants", body: "Separez la liste des prix et le pool de personnes pour des tirages plus structures." },
     { title: "Historique des gagnants", body: "Gardez une vue claire de qui a gagne quoi, avec horodatage." },

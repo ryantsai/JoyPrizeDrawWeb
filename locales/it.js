@@ -18,7 +18,7 @@ window.landingMessages.it = {
   visualChipBottom: "Pacchetti, storico e interfaccia localizzata",
   stats: [
     { value: "8", label: "modi per rivelare un vincitore" },
-    { value: "Riutilizzabile", label: "pacchetti e liste partecipanti" },
+    { value: "15", label: "pacchetti integrati pronti" },
     { value: "10", label: "locali supportate" },
   ],
   modesEyebrow: "Modalita di estrazione",
@@ -50,7 +50,7 @@ window.landingMessages.it = {
     "Pacchetti riutilizzabili, modalita partecipanti, limiti di vincita, import massivo, export e storico rendono l'app utile anche sul piano operativo.",
   features: [
     { title: "Pacchetti riutilizzabili", body: "Salva i set di premi ricorrenti e ricaricali subito al prossimo evento." },
-    { title: "Pacchetti iniziali integrati", body: "Inizia subito con pacchetti pronti all'uso come carte dei tarocchi, mazzi di poker e altro — nessuna configurazione necessaria." },
+    { title: "Pacchetti iniziali integrati", body: "Inizia con 15 pacchetti integrati: tarocchi, carte da poker, risposte Magic 8 Ball, spunti per storie, idee pranzo, sfide fotografiche e altro — senza configurazione." },
     { title: "Adorabile criceto compagno", body: "Un simpatico cricetino accompagna ogni estrazione, aggiungendo calore e allegria a ogni rivelazione (disponibile in modalita selezionate)." },
     { title: "Modalita partecipanti", body: "Separa il pool premi dal pool persone quando il sorteggio richiede piu struttura." },
     { title: "Storico vincitori", body: "Tieni traccia in modo chiaro di chi ha vinto cosa e quando." },

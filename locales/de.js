@@ -18,7 +18,7 @@ window.landingMessages.de = {
   visualChipBottom: "Packs, Historie und lokalisierte UI",
   stats: [
     { value: "8", label: "Arten, Gewinner zu zeigen" },
-    { value: "Wiederverwendbar", label: "Packs und Teilnehmerlisten" },
+    { value: "15", label: "integrierte Packs zum Laden" },
     { value: "10", label: "unterstuetzte Locales" },
   ],
   modesEyebrow: "Ziehungsmodi",
@@ -50,7 +50,7 @@ window.landingMessages.de = {
     "Wiederverwendbare Packs, Teilnehmermodus, Gewinnlimits, Massenimport, Export und Historie machen die App auch im Ablauf belastbar.",
   features: [
     { title: "Wiederverwendbare Packs", body: "Speichern Sie wiederkehrende Preislisten einmal und laden Sie sie spaeter sofort wieder." },
-    { title: "Integrierte Startpakete", body: "Legen Sie sofort los mit fertigen Paketen wie Tarotkarten, Pokerdecks und mehr — kein Setup noetig." },
+    { title: "Integrierte Startpakete", body: "Starten Sie mit 15 integrierten Packs: Tarotkarten, Spielkarten, Magic-8-Ball-Antworten, Story-Anfaenge, Mittagsideen, Foto-Challenges und mehr — ganz ohne Setup." },
     { title: "Niedlicher Hamster-Begleiter", body: "Ein froehlicher kleiner Hamster begleitet jede Ziehung und bringt extra Waerme und Freude in jeden Moment (in ausgewaehlten Modi verfuegbar)." },
     { title: "Teilnehmermodus", body: "Trennen Sie Preise und Personenkreis, wenn die Ziehung strukturierter sein soll." },
     { title: "Gewinnerhistorie", body: "Behalten Sie im Blick, wer was gewonnen hat und wann." },

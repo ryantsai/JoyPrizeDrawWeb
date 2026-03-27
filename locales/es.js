@@ -18,7 +18,7 @@ window.landingMessages.es = {
   visualChipBottom: "Paquetes, historial e interfaz localizada",
   stats: [
     { value: "8", label: "formas de revelar un ganador" },
-    { value: "Reutilizable", label: "paquetes y listas de participantes" },
+    { value: "15", label: "paquetes integrados listos" },
     { value: "10", label: "locales compatibles" },
   ],
   modesEyebrow: "Modos de sorteo",
@@ -50,7 +50,7 @@ window.landingMessages.es = {
     "Paquetes reutilizables, modo participantes, limites de victorias, importacion masiva, exportacion e historial hacen que la app sirva tambien como herramienta operativa.",
   features: [
     { title: "Paquetes reutilizables", body: "Guarda listas de premios recurrentes y vuelvelas a cargar en el siguiente evento." },
-    { title: "Paquetes iniciales integrados", body: "Empieza al instante con paquetes listos como cartas de tarot, barajas de poker y mas — sin configuracion necesaria." },
+    { title: "Paquetes iniciales integrados", body: "Empieza con 15 paquetes integrados: tarot, cartas de poker, respuestas Magic 8 Ball, inicios de historia, ideas de almuerzo, retos de fotos y mas — sin configuracion previa." },
     { title: "Adorable hamster companero", body: "Un simpatico hamster acompana cada sorteo, aportando calidez y alegria a cada revelacion (disponible en modos seleccionados)." },
     { title: "Modo participantes", body: "Separa el pool de premios del pool de personas para sorteos mas estructurados." },
     { title: "Historial de ganadores", body: "Conserva un registro claro de quien gano que y en que momento." },

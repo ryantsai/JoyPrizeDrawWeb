@@ -18,7 +18,7 @@ window.landingMessages.en = {
   visualChipBottom: "Packs, history, and localized UI",
   stats: [
     { value: "8", label: "ways to reveal a winner" },
-    { value: "Reusable", label: "item packs and entrant lists" },
+    { value: "15", label: "built-in packs ready to load" },
     { value: "10", label: "supported locales out of the box" },
   ],
   modesEyebrow: "Draw modes",
@@ -96,7 +96,7 @@ window.landingMessages.en = {
     },
     {
       title: "Built-in starter packs",
-      body: "Hit the ground running with ready-made packs like Tarot cards, poker decks, and more — zero setup required.",
+      body: "Start with 15 ready-made packs: Tarot cards, poker cards, Magic 8 Ball answers, story starters, lunch picks, photo challenges, and more — zero setup required.",
     },
     {
       title: "Adorable hamster companion",
