@@ -5,7 +5,6 @@ const messages = window.landingMessages || {};
 const localeOptions = [
   { code: "en", label: "English" },
   { code: "ja", label: "日本語" },
-  { code: "zh", label: "中文" },
   { code: "zh-CN", label: "简体中文" },
   { code: "zh-TW", label: "繁體中文" },
   { code: "ko", label: "한국어" },
@@ -50,7 +49,7 @@ function normalizeLocale(locale) {
       return "zh-CN";
     }
 
-    return "zh";
+    return "zh-CN";
   }
 
   const supported = localeOptions.find(({ code }) =>
@@ -61,8 +60,11 @@ function normalizeLocale(locale) {
 
 function getInitialLocale() {
   const saved = window.localStorage.getItem(STORAGE_KEY);
-  if (saved && messages[saved]) {
-    return saved;
+  if (saved) {
+    const normalizedSaved = normalizeLocale(saved);
+    if (messages[normalizedSaved]) {
+      return normalizedSaved;
+    }
   }
 
   const browserLocales = navigator.languages?.length
