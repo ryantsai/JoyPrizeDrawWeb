@@ -50,6 +50,8 @@ window.landingMessages.it = {
     "Pacchetti riutilizzabili, modalita partecipanti, limiti di vincita, import massivo, export e storico rendono l'app utile anche sul piano operativo.",
   features: [
     { title: "Pacchetti riutilizzabili", body: "Salva i set di premi ricorrenti e ricaricali subito al prossimo evento." },
+    { title: "Pacchetti iniziali integrati", body: "Inizia subito con pacchetti pronti all'uso come carte dei tarocchi, mazzi di poker e altro — nessuna configurazione necessaria." },
+    { title: "Adorabile criceto compagno", body: "Un simpatico cricetino accompagna ogni estrazione, aggiungendo calore e allegria a ogni rivelazione (disponibile in modalita selezionate)." },
     { title: "Modalita partecipanti", body: "Separa il pool premi dal pool persone quando il sorteggio richiede piu struttura." },
     { title: "Storico vincitori", body: "Tieni traccia in modo chiaro di chi ha vinto cosa e quando." },
     { title: "Import massivo e numerazione", body: "Incolla elenchi, genera ticket numerati e riduci la preparazione per gruppi numerosi." },

@@ -50,6 +50,8 @@ window.landingMessages.fr = {
     "Packs reutilisables, mode participants, limites de gain, import massif, export et historique : l'application soutient aussi la logistique du tirage.",
   features: [
     { title: "Packs reutilisables", body: "Conservez vos listes de lots recurrents pour les classes, lives ou evenements repetes." },
+    { title: "Packs de demarrage integres", body: "Lancez-vous directement avec des packs prets a l'emploi : cartes de tarot, jeux de poker et plus — aucune configuration necessaire." },
+    { title: "Adorable hamster compagnon", body: "Un petit hamster joyeux accompagne chaque tirage, ajoutant chaleur et sourires a chaque revelation (disponible dans certains modes)." },
     { title: "Mode participants", body: "Separez la liste des prix et le pool de personnes pour des tirages plus structures." },
     { title: "Historique des gagnants", body: "Gardez une vue claire de qui a gagne quoi, avec horodatage." },
     { title: "Import en masse et numerotation", body: "Collez une liste, generez des billets numerotes, et gagnez du temps en preparation." },

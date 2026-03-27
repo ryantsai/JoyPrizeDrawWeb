@@ -95,6 +95,14 @@ window.landingMessages.en = {
       body: "Save recurring prize sets once, then load them again for classes, giveaways, or stream formats.",
     },
     {
+      title: "Built-in starter packs",
+      body: "Hit the ground running with ready-made packs like Tarot cards, poker decks, and more — zero setup required.",
+    },
+    {
+      title: "Adorable hamster companion",
+      body: "A cheerful little hamster tags along for every draw, adding extra warmth and smiles to each reveal (available in select modes).",
+    },
+    {
       title: "Participant mode",
       body: "Pair a prize with a winner from a separate entrant pool when the draw needs structure instead of raw randomness.",
     },

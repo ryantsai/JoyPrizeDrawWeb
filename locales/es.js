@@ -50,6 +50,8 @@ window.landingMessages.es = {
     "Paquetes reutilizables, modo participantes, limites de victorias, importacion masiva, exportacion e historial hacen que la app sirva tambien como herramienta operativa.",
   features: [
     { title: "Paquetes reutilizables", body: "Guarda listas de premios recurrentes y vuelvelas a cargar en el siguiente evento." },
+    { title: "Paquetes iniciales integrados", body: "Empieza al instante con paquetes listos como cartas de tarot, barajas de poker y mas — sin configuracion necesaria." },
+    { title: "Adorable hamster companero", body: "Un simpatico hamster acompana cada sorteo, aportando calidez y alegria a cada revelacion (disponible en modos seleccionados)." },
     { title: "Modo participantes", body: "Separa el pool de premios del pool de personas para sorteos mas estructurados." },
     { title: "Historial de ganadores", body: "Conserva un registro claro de quien gano que y en que momento." },
     { title: "Importacion masiva y numeracion", body: "Pega listas, genera tickets numerados y reduce la preparacion de eventos grandes." },

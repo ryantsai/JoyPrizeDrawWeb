@@ -50,6 +50,8 @@ window.landingMessages.de = {
     "Wiederverwendbare Packs, Teilnehmermodus, Gewinnlimits, Massenimport, Export und Historie machen die App auch im Ablauf belastbar.",
   features: [
     { title: "Wiederverwendbare Packs", body: "Speichern Sie wiederkehrende Preislisten einmal und laden Sie sie spaeter sofort wieder." },
+    { title: "Integrierte Startpakete", body: "Legen Sie sofort los mit fertigen Paketen wie Tarotkarten, Pokerdecks und mehr — kein Setup noetig." },
+    { title: "Niedlicher Hamster-Begleiter", body: "Ein froehlicher kleiner Hamster begleitet jede Ziehung und bringt extra Waerme und Freude in jeden Moment (in ausgewaehlten Modi verfuegbar)." },
     { title: "Teilnehmermodus", body: "Trennen Sie Preise und Personenkreis, wenn die Ziehung strukturierter sein soll." },
     { title: "Gewinnerhistorie", body: "Behalten Sie im Blick, wer was gewonnen hat und wann." },
     { title: "Massenimport und Nummerierung", body: "Listen einfuegen, nummerierte Tickets erzeugen und Vorbereitung fuer groessere Gruppen verkuerzen." },
