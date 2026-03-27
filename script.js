@@ -233,12 +233,6 @@ function applyLocale(locale) {
   setText("faq-title", t.faqTitle);
   renderFaqs(t.faqs);
 
-  setText("cta-eyebrow", t.ctaEyebrow);
-  setText("cta-title", t.ctaTitle);
-  setText("cta-body", t.ctaBody);
-  setText("cta-primary", t.ctaPrimary);
-  setText("cta-secondary", t.ctaSecondary);
-  setText("cta-note", t.ctaNote);
   setText("footer-tagline", t.footerTagline);
   setText("footer-meta", t.footerMeta);
 

@@ -9,7 +9,7 @@ window.landingMessages.fr = {
   heroTitle:
     'Faites de chaque revelation un <span class="accent">vrai moment de scene</span>.',
   heroLead:
-    "Roue coloree, capsules gacha, cartes a gratter, boules de loterie, slots, echelle ou tirage rapide : Joy Prize Draw transforme une selection aleatoire en revelation soignee et memorable.",
+    "Roue, Gacha, Boite surprise, Loterie, Echelle, Machines a sous, Grattage ou mode Aleatoire : Joy Prize Draw transforme une selection aleatoire en revelation soignee et memorable.",
   heroPrimaryCta: "Voir les modes",
   heroSecondaryCta: "Voir les outils",
   heroNote:
@@ -28,12 +28,12 @@ window.landingMessages.fr = {
   modes: [
     { name: "Roue", body: "Le grand classique, avec un ralentissement net et un vrai final.", image: "assets/img/prizewheel_thumbnail.png" },
     { name: "Gacha", body: "On secoue, on laisse tomber la capsule, puis on l'ouvre pour un reveal plus joueur.", image: "assets/img/gacha_thumbnail.png" },
-    { name: "Blind box", body: "Le suspense reste entier jusqu'au tout dernier geste.", image: "assets/img/blindbox_thumbnail.png" },
+    { name: "Boite surprise", body: "Le suspense reste entier jusqu'au tout dernier geste.", image: "assets/img/blindbox_thumbnail.png" },
     { name: "Loterie", body: "Une animation de boule tiree qui donne un vrai ton evenementiel.", image: "assets/img/lottery_thumbnail.png" },
     { name: "Echelle", body: "Le resultat se construit visuellement comme dans un jeu televise.", image: "assets/img/ladder_thumbnail.png" },
-    { name: "Slots", body: "Trois rouleaux, un rythme net, et une finition presque jackpot.", image: "assets/img/slots_thumbnail.png" },
-    { name: "Scratch", body: "On gratte pour reveler le gagnant, avec une vraie sensation de participation.", image: "assets/img/scratch_thumbnail.png" },
-    { name: "Random", body: "Le mode direct quand il faut une reponse tout de suite.", symbol: "★" },
+    { name: "Machines a sous", body: "Trois rouleaux, un rythme net, et une finition presque jackpot.", image: "assets/img/slots_thumbnail.png" },
+    { name: "Grattage", body: "On gratte pour reveler le gagnant, avec une vraie sensation de participation.", image: "assets/img/scratch_thumbnail.png" },
+    { name: "Aleatoire", body: "Le mode direct quand il faut une reponse tout de suite.", symbol: "★" },
   ],
   workflowEyebrow: "Mise en place rapide",
   workflowTitle: "De la liste au resultat en trois etapes courtes.",
@@ -41,7 +41,7 @@ window.landingMessages.fr = {
     "Chargez les elements, choisissez l'ambiance, laissez l'application gerer le reveal et l'historique.",
   workflowSteps: [
     { title: "Chargez vos elements", body: "Ajoutez-les a la main, collez une liste en masse, ou reutilisez un pack deja enregistre." },
-    { title: "Choisissez le ton", body: "Roue, gacha, scratch, slots, echelle, loterie, blind box ou tirage rapide selon le moment." },
+    { title: "Choisissez le ton", body: "Roue, Gacha, Boite surprise, Loterie, Echelle, Machines a sous, Grattage ou Aleatoire selon le moment." },
     { title: "Revelez puis enchainez", body: "Historique, reroll et suppression des gagnants deja tires : tout reste fluide pour l'animateur." },
   ],
   organizersEyebrow: "Pense pour l'organisation",
@@ -66,12 +66,13 @@ window.landingMessages.fr = {
     { title: "Fetes et giveaways", body: "Donnez plus de ceremonie meme a de petits lots." },
   ],
   faqEyebrow: "Questions frequentes",
-  faqTitle: "Les points utiles a verifier avant publication.",
+  faqTitle: "Ce que l'on demande souvent avant de l'utiliser en vrai.",
   faqs: [
-    { q: "Peut-on deployer la page telle quelle ?", a: "Oui. Le dossier contient uniquement du HTML, du CSS, du JavaScript et des images statiques, donc il peut etre envoye directement sur la plupart des hebergeurs." },
-    { q: "Comment fonctionne la langue ?", a: "La page detecte la langue du navigateur lors de la premiere visite, choisit la locale la plus proche, puis memorise toute selection manuelle." },
-    { q: "Quels visuels ameliorer ensuite ?", a: "Les illustrations actuelles donnent deja une belle base. Pour monter en conversion, ajoutez ensuite de vraies captures d'ecran ou une courte demo." },
-    { q: "La page colle-t-elle aux fonctions actuelles ?", a: "Oui. Elle est redigee autour des locales prises en charge, des modes de tirage, des packs, du flux participants, de l'export et de l'historique." },
+    { q: "Peut-on tirer des lots, des personnes, ou les deux ?", a: "Oui. Vous pouvez faire un tirage simple sur une liste d'elements, ou activer le mode participants pour separer les prix et la liste des personnes." },
+    { q: "Comment eviter qu'un meme gagnant ressorte ?", a: "Cote elements, vous pouvez retirer les gagnants deja tires. En mode participants, vous pouvez aussi definir des limites de victoire pour eviter les doublons." },
+    { q: "Peut-on preparer les listes avant l'evenement ?", a: "Oui. Saisie manuelle, collage en masse, numerotation automatique et packs reutilisables sont prevus pour cela." },
+    { q: "Les packs et l'historique restent-ils sur l'appareil ?", a: "Oui. Tant que vous n'exportez ou ne partagez rien, les donnees de travail restent stockees localement." },
+    { q: "Peut-on revoir ou exporter les resultats apres coup ?", a: "Oui. L'historique des gagnants reste disponible dans l'app, et vous pouvez exporter en CSV ou TXT si besoin." },
   ],
   ctaEyebrow: "Front-end pret a publier",
   ctaTitle: "Publiez cette base maintenant, puis ajoutez les liens stores plus tard.",

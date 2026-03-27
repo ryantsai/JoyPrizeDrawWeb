@@ -9,7 +9,7 @@ window.landingMessages.es = {
   heroTitle:
     'Convierte cada revelacion en un <span class="accent">momento principal</span>.',
   heroLead:
-    "Ruleta, gacha, rasca, bolas de loteria, slots, escalera o modo rapido: Joy Prize Draw convierte una eleccion aleatoria en una revelacion con mas impacto y presencia.",
+    "Ruleta, Gacha, Caja sorpresa, Loteria, Escalera, Tragamonedas, Raspado o modo Aleatorio: Joy Prize Draw convierte una eleccion aleatoria en una revelacion con mas impacto y presencia.",
   heroPrimaryCta: "Ver modos",
   heroSecondaryCta: "Ver herramientas",
   heroNote:
@@ -28,12 +28,12 @@ window.landingMessages.es = {
   modes: [
     { name: "Ruleta", body: "La opcion clasica, con una desaceleracion agradable y un final contundente.", image: "assets/img/prizewheel_thumbnail.png" },
     { name: "Gacha", body: "Sacude, deja caer la capsula y abre para una revelacion mas juguetona.", image: "assets/img/gacha_thumbnail.png" },
-    { name: "Blind box", body: "Mantiene el misterio hasta el ultimo gesto.", image: "assets/img/blindbox_thumbnail.png" },
+    { name: "Caja sorpresa", body: "Mantiene el misterio hasta el ultimo gesto.", image: "assets/img/blindbox_thumbnail.png" },
     { name: "Loteria", body: "Una animacion de bolas que da mas sensacion de evento.", image: "assets/img/lottery_thumbnail.png" },
     { name: "Escalera", body: "El recorrido hacia el resultado se vuelve parte del show.", image: "assets/img/ladder_thumbnail.png" },
-    { name: "Slots", body: "Tres carretes, ritmo marcado y un cierre con vibra de jackpot.", image: "assets/img/slots_thumbnail.png" },
-    { name: "Scratch", body: "Desliza para descubrir al ganador debajo de la superficie.", image: "assets/img/scratch_thumbnail.png" },
-    { name: "Random", body: "El modo directo cuando lo importante es decidir ya.", symbol: "★" },
+    { name: "Tragamonedas", body: "Tres carretes, ritmo marcado y un cierre con vibra de jackpot.", image: "assets/img/slots_thumbnail.png" },
+    { name: "Raspado", body: "Desliza para descubrir al ganador debajo de la superficie.", image: "assets/img/scratch_thumbnail.png" },
+    { name: "Aleatorio", body: "El modo directo cuando lo importante es decidir ya.", symbol: "★" },
   ],
   workflowEyebrow: "Preparacion rapida",
   workflowTitle: "De la lista al aplauso en tres pasos cortos.",
@@ -41,7 +41,7 @@ window.landingMessages.es = {
     "Carga tus elementos, elige el tono y deja que la app resuelva la revelacion y el registro.",
   workflowSteps: [
     { title: "Carga los elementos", body: "Puedes escribirlos a mano, pegar una lista en bloque o reutilizar un paquete guardado." },
-    { title: "Elige la energia", body: "Ruleta, gacha, rasca, slots, escalera, loteria, blind box o un modo rapido segun la ocasion." },
+    { title: "Elige la energia", body: "Ruleta, Gacha, Caja sorpresa, Loteria, Escalera, Tragamonedas, Raspado o Aleatorio segun la ocasion." },
     { title: "Revela y continua", body: "Historial, reroll y retiro de premios ya sorteados siguen disponibles para no cortar el flujo." },
   ],
   organizersEyebrow: "Pensado para quien organiza",
@@ -66,12 +66,13 @@ window.landingMessages.es = {
     { title: "Fiestas y giveaways", body: "Hasta un premio pequeno gana mas ceremonia cuando la revelacion esta bien hecha." },
   ],
   faqEyebrow: "Preguntas comunes",
-  faqTitle: "Lo que suele revisarse antes de publicar o compartir.",
+  faqTitle: "Lo que la gente suele preguntar antes de usarla en vivo.",
   faqs: [
-    { q: "Se puede desplegar tal cual?", a: "Si. Todo el paquete es HTML, CSS, JavaScript e imagenes estaticas, por lo que puede subirse directamente a la mayoria de plataformas de hosting." },
-    { q: "Como funciona el idioma?", a: "En la primera visita la pagina lee el idioma del navegador, lo ajusta a una locale compatible y recuerda cualquier cambio manual posterior." },
-    { q: "Que imagenes conviene mejorar despues?", a: "Las ilustraciones actuales ya funcionan bien. Para subir conversion, mas adelante conviene sumar capturas reales o una demo corta del producto." },
-    { q: "La pagina refleja las funciones actuales?", a: "Si. El contenido se apoya en las locales compatibles, modos de sorteo, paquetes, flujo de participantes, exportacion e historial existentes." },
+    { q: "Sirve para sortear premios, personas o ambas cosas?", a: "Si. Puedes hacer sorteos solo con items o activar el modo participantes para separar premios y lista de personas." },
+    { q: "Como evito que salga el mismo ganador dos veces?", a: "Puedes quitar los ganadores ya elegidos en sorteos de items, y en modo participantes tambien puedes fijar limites de victoria." },
+    { q: "Puedo dejar listas preparadas antes del evento?", a: "Si. La app permite escribir a mano, pegar listas en bloque, generar numeracion automatica y reutilizar paquetes guardados." },
+    { q: "Los paquetes y el historial quedan guardados en este dispositivo?", a: "Si. Mientras no exportes ni compartas los datos, la informacion de trabajo se mantiene localmente en el dispositivo." },
+    { q: "Se pueden revisar o exportar los resultados despues?", a: "Si. El historial de ganadores sigue disponible en la app y, si hace falta, puedes exportar datos en CSV o TXT." },
   ],
   ctaEyebrow: "Front-end listo para salir",
   ctaTitle: "Usa esta base ahora y agrega enlaces de tiendas cuando publiques.",
@@ -85,4 +86,3 @@ window.landingMessages.es = {
     "Una experiencia de sorteo cuidada para aulas, fiestas, streams y eventos en vivo.",
   footerMeta: "Paquete de landing estatica • 2026",
 };
-

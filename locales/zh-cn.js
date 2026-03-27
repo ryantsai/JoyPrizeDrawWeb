@@ -7,7 +7,7 @@ window.landingMessages["zh-CN"] = {
   heroEyebrow: "适用于课堂、派对、直播与现场活动的抽奖应用",
   heroTitle: '让每一次揭晓，都像<span class="accent">真正的主秀时刻</span>。',
   heroLead:
-    "从彩色转盘、扭蛋、刮刮卡，到抽奖球、老虎机、梯子路径与快速随机模式，Joy Prize Draw 把原本普通的随机抽选，做成更有记忆点的揭晓体验。",
+    "从转盘、扭蛋、盲盒、抽签、爬梯、老虎机、刮刮卡到随机模式，Joy Prize Draw 把原本普通的随机抽选，做成更有记忆点的揭晓体验。",
   heroPrimaryCta: "查看抽奖模式",
   heroSecondaryCta: "查看主办功能",
   heroNote:
@@ -27,8 +27,8 @@ window.landingMessages["zh-CN"] = {
     { name: "转盘", body: "经典直观的揭晓方式，停下来的那一刻很有分量。", image: "assets/img/prizewheel_thumbnail.png" },
     { name: "扭蛋", body: "把掉落与打开胶囊的过程也变成表演的一部分。", image: "assets/img/gacha_thumbnail.png" },
     { name: "盲盒", body: "保留未知感，让最后一下揭晓更有惊喜。", image: "assets/img/blindbox_thumbnail.png" },
-    { name: "抽奖球", body: "用抽球动态做出更像活动舞台的抽选节奏。", image: "assets/img/lottery_thumbnail.png" },
-    { name: "梯子", body: "沿着路径往下走，像游戏节目一样有过程感。", image: "assets/img/ladder_thumbnail.png" },
+    { name: "抽签", body: "用抽球动态做出更像活动舞台的抽选节奏。", image: "assets/img/lottery_thumbnail.png" },
+    { name: "爬梯", body: "沿着路径往下走，像游戏节目一样有过程感。", image: "assets/img/ladder_thumbnail.png" },
     { name: "老虎机", body: "三轴转动加上停格节奏，让中奖瞬间更有爽感。", image: "assets/img/slots_thumbnail.png" },
     { name: "刮刮卡", body: "用手势揭开表面，让参与感直接发生在屏幕上。", image: "assets/img/scratch_thumbnail.png" },
     { name: "随机", body: "需要快速决定时，直接给出答案，不拖节奏。", symbol: "★" },
@@ -39,7 +39,7 @@ window.landingMessages["zh-CN"] = {
     "先准备项目，再选演出，最后留下结果。流程简洁，现场不会被工具拖慢。",
   workflowSteps: [
     { title: "载入项目", body: "可手动新增，也能粘贴整批名单，或直接使用之前存好的方案包。" },
-    { title: "选择氛围", body: "按场景改用转盘、扭蛋、刮刮卡、老虎机、梯子、抽奖球、盲盒或快速随机模式。" },
+    { title: "选择氛围", body: "按场景改用转盘、扭蛋、盲盒、抽签、爬梯、老虎机、刮刮卡或随机模式。" },
     { title: "揭晓并记录", body: "中奖记录、重抽、移除已抽中项目都能接着处理，流程不会卡住。" },
   ],
   organizersEyebrow: "主办工具",
@@ -63,12 +63,13 @@ window.landingMessages["zh-CN"] = {
     { title: "派对与赠品抽奖", body: "让小奖品也能拥有像正式揭晓一样的时刻。" },
   ],
   faqEyebrow: "常见问题",
-  faqTitle: "在发布或分享之前，通常会先确认这些事。",
+  faqTitle: "开始使用前，大家通常会先问这些事。",
   faqs: [
-    { q: "这个页面可以直接部署吗？", a: "可以。整个 landing page 都是静态 HTML、CSS、JavaScript 与图片资源，可直接部署到多数静态主机服务。" },
-    { q: "语言切换怎么运作？", a: "首次访问时会读取浏览器语言，自动对应到支持语系；用户手动切换后，也会记住这个选择。" },
-    { q: "之后最值得升级的素材是什么？", a: "目前内建插图已经足够专业；如果想提高说服力，建议之后加上真实画面截图、设备 mockup 或短录屏。" },
-    { q: "页面有对应现在的应用功能吗？", a: "有。文案与结构都是根据当前支持的语系、抽奖模式、方案包、参与者流程、导出与历史功能撰写。" },
+    { q: "这个应用可以抽奖品、抽人，还是两者都可以？", a: "都可以。你可以只抽项目，也可以开启参与者模式，把奖品和人员名单分开管理。" },
+    { q: "怎么避免同一个中奖者重复出现？", a: "项目抽选可以开启移除已中奖项；参与者模式则可以设定中奖次数限制，减少重复中奖。" },
+    { q: "能不能在活动开始前先把名单准备好？", a: "可以。你可以手动输入、整批粘贴清单、自动生成编号，也可以把常用内容存成可复用方案包。" },
+    { q: "方案包和历史记录会保存在这台设备上吗？", a: "会。除非你主动导出或分享，否则应用数据会保存在本机。" },
+    { q: "活动结束后可以回看或导出结果吗？", a: "可以。应用会保留中奖历史，必要时也能导出为 CSV 或 TXT 作为记录。" },
   ],
   ctaEyebrow: "可直接延伸的前端",
   ctaTitle: "先用这个版本上线，之后再把商店链接与新素材补进来。",
@@ -80,4 +81,3 @@ window.landingMessages["zh-CN"] = {
   footerTagline: "为课堂、派对、直播与现场活动打造的精致抽奖体验。",
   footerMeta: "静态 landing page 套件 • 2026",
 };
-

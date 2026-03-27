@@ -9,7 +9,7 @@ window.landingMessages.en = {
   heroTitle:
     'Make every winner reveal feel like the <span class="accent">main event</span>.',
   heroLead:
-    "Spin a colorful wheel, crack open gacha capsules, reveal scratch cards, drop lottery balls, run slot-style draws, and keep every selection memorable. Joy Prize Draw turns random picking into a polished show.",
+    "Spin a colorful Wheel, crack open Gacha capsules, reveal Blindbox surprises, run Lottery drops, follow Ladder paths, stop the Slots, scratch away the finish, or pick in Random mode. Joy Prize Draw turns simple selection into a polished show.",
   heroPrimaryCta: "Explore the draw modes",
   heroSecondaryCta: "See organizer tools",
   heroNote:
@@ -37,7 +37,7 @@ window.landingMessages.en = {
       image: "assets/img/gacha_thumbnail.png",
     },
     {
-      name: "Blind Box",
+      name: "Blindbox",
       body: "Turn mystery into suspense, then reveal the result with one clean tap.",
       image: "assets/img/blindbox_thumbnail.png",
     },
@@ -78,7 +78,7 @@ window.landingMessages.en = {
     },
     {
       title: "Pick the energy",
-      body: "Match the moment with a wheel, gacha, scratch card, slots, ladder path, lottery drop, blind box, or quick random mode.",
+      body: "Match the moment with Wheel, Gacha, Blindbox, Lottery, Ladder, Slots, Scratch, or Random mode.",
     },
     {
       title: "Reveal and keep moving",
@@ -134,23 +134,27 @@ window.landingMessages.en = {
     },
   ],
   faqEyebrow: "Questions",
-  faqTitle: "What people usually need before publishing or sharing.",
+  faqTitle: "What people usually ask before using it live.",
   faqs: [
     {
-      q: "Can this page be deployed as-is?",
-      a: "Yes. Everything in the landing page package is static HTML, CSS, JavaScript, and image assets, so it can be uploaded to most hosting platforms directly.",
+      q: "Can I draw prizes, people, or both?",
+      a: "Yes. You can use the app for item-only draws, or turn on Participant mode when you need to pair prizes with a separate list of people.",
     },
     {
-      q: "How does language selection work?",
-      a: "The page checks the browser language on first visit, matches it to a supported locale, and remembers any manual choice after that.",
+      q: "How do I stop the same winner from appearing twice?",
+      a: "Use the remove-winner option for items, or set win limits in Participant mode when the same person should not be selected again.",
     },
     {
-      q: "What visuals should be upgraded later?",
-      a: "The bundled artwork is good enough for a polished first version. For stronger conversion later, add real app screenshots, device mockups, or a short product-motion capture.",
+      q: "Can I prepare lists before an event starts?",
+      a: "Yes. You can type items manually, paste one-per-line lists in bulk, auto-generate numbered entries, and save reusable packs for later.",
     },
     {
-      q: "Does it reflect the current app feature set?",
-      a: "Yes. The page is written around the app's supported locales, draw modes, reusable packs, participant flow, exports, and history tools.",
+      q: "Will my packs and history stay on this device?",
+      a: "Yes. The app stores its working data locally on the device unless you explicitly export or share it.",
+    },
+    {
+      q: "Can I review or export results afterward?",
+      a: "Yes. Winner history stays available in the app, and you can export data as CSV or TXT when you need a record after the event.",
     },
   ],
   ctaEyebrow: "Launch-ready front end",

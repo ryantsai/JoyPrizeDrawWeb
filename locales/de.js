@@ -9,7 +9,7 @@ window.landingMessages.de = {
   heroTitle:
     'Machen Sie aus jeder Gewinnerbekanntgabe einen <span class="accent">echten Hauptmoment</span>.',
   heroLead:
-    "Gluecksrad, Gacha-Kapseln, Rubbellos, Lotteriekugeln, Slots, Leiterpfad oder Schnellmodus: Joy Prize Draw macht aus zufaelliger Auswahl eine praesentationsstarke Gewinnerenthuellung.",
+    "Rad, Gacha, Blindbox, Lotterie, Leiter, Slots, Rubbellos oder Zufall: Joy Prize Draw macht aus zufaelliger Auswahl eine praesentationsstarke Gewinnerenthuellung.",
   heroPrimaryCta: "Modi ansehen",
   heroSecondaryCta: "Tools ansehen",
   heroNote:
@@ -32,8 +32,8 @@ window.landingMessages.de = {
     { name: "Lotterie", body: "Kugel-Animation mit echtem Event-Gefuehl.", image: "assets/img/lottery_thumbnail.png" },
     { name: "Leiter", body: "Der Weg zum Ergebnis bleibt sichtbar und fuehlt sich wie eine Spielshow an.", image: "assets/img/ladder_thumbnail.png" },
     { name: "Slots", body: "Drei Walzen und ein klares Taktgefuehl bis zum Jackpot-Moment.", image: "assets/img/slots_thumbnail.png" },
-    { name: "Scratch", body: "Freirubbeln und den Gewinner direkt unter der Oberflaeche entdecken.", image: "assets/img/scratch_thumbnail.png" },
-    { name: "Random", body: "Der Direktmodus, wenn es sofort eine Antwort geben soll.", symbol: "★" },
+    { name: "Rubbellos", body: "Freirubbeln und den Gewinner direkt unter der Oberflaeche entdecken.", image: "assets/img/scratch_thumbnail.png" },
+    { name: "Zufall", body: "Der Direktmodus, wenn es sofort eine Antwort geben soll.", symbol: "★" },
   ],
   workflowEyebrow: "Schneller Start",
   workflowTitle: "Von der Liste zum Applaus in drei klaren Schritten.",
@@ -41,7 +41,7 @@ window.landingMessages.de = {
     "Eintragen, Stimmung waehlen, Ergebnis zeigen. Der Ablauf bleibt absichtlich einfach.",
   workflowSteps: [
     { title: "Elemente laden", body: "Manuell erfassen, Massenliste einfuegen oder ein gespeichertes Pack erneut nutzen." },
-    { title: "Stimmung waehlen", body: "Rad, Gacha, Scratch, Slots, Leiter, Lotterie, Blindbox oder Schnellmodus je nach Anlass." },
+    { title: "Stimmung waehlen", body: "Rad, Gacha, Blindbox, Lotterie, Leiter, Slots, Rubbellos oder Zufall je nach Anlass." },
     { title: "Enthuellen und weitermachen", body: "Historie, Reroll und das Entfernen gezogener Gewinner bleiben direkt verfuegbar." },
   ],
   organizersEyebrow: "Fuer Organisatoren",
@@ -66,12 +66,13 @@ window.landingMessages.de = {
     { title: "Partys und Giveaways", body: "Selbst kleine Preise bekommen einen besonderen Enthuellungsmoment." },
   ],
   faqEyebrow: "Fragen",
-  faqTitle: "Was vor dem Veroeffentlichen meist noch geprueft wird.",
+  faqTitle: "Was vor dem echten Einsatz meist gefragt wird.",
   faqs: [
-    { q: "Laesst sich die Seite direkt deployen?", a: "Ja. Alles besteht aus statischem HTML, CSS, JavaScript und Bilddateien und kann daher direkt bei den meisten Hostern hochgeladen werden." },
-    { q: "Wie funktioniert die Sprachauswahl?", a: "Beim ersten Besuch wird die Browsersprache erkannt, auf eine unterstuetzte Locale gemappt und spaeter jede manuelle Auswahl gespeichert." },
-    { q: "Welche Bilder sollten spaeter ersetzt werden?", a: "Die vorhandenen App-Grafiken funktionieren schon gut. Fuer mehr Wirkung empfehlen sich spaeter echte Screenshots oder kurze Produktaufnahmen." },
-    { q: "Spiegelt die Seite den aktuellen Funktionsumfang wider?", a: "Ja. Inhalte und Aufbau richten sich nach den unterstuetzten Locales, Modi, Packs, Teilnehmerfluss, Exporten und der Historie." },
+    { q: "Kann ich Preise, Personen oder beides auslosen?", a: "Ja. Sie koennen nur mit einer Elementliste arbeiten oder den Teilnehmermodus aktivieren, um Preise und Personen getrennt zu fuehren." },
+    { q: "Wie verhindere ich doppelte Gewinner?", a: "Bei Elementen koennen bereits gezogene Gewinner entfernt werden. Im Teilnehmermodus lassen sich ausserdem Gewinnlimits setzen." },
+    { q: "Kann ich Listen schon vor dem Event vorbereiten?", a: "Ja. Manuelle Eingabe, Massenimport per Einfuegen, automatische Nummerierung und wiederverwendbare Packs sind dafuer gedacht." },
+    { q: "Bleiben Packs und Historie auf diesem Geraet?", a: "Ja. Solange Sie nichts exportieren oder teilen, bleiben die Arbeitsdaten lokal auf dem Geraet gespeichert." },
+    { q: "Kann ich Ergebnisse spaeter pruefen oder exportieren?", a: "Ja. Die Gewinnerhistorie bleibt in der App sichtbar, und bei Bedarf koennen Daten als CSV oder TXT exportiert werden." },
   ],
   ctaEyebrow: "Bereit fuer den Einsatz",
   ctaTitle: "Nutzen Sie diese Basis jetzt und ergaenzen Sie Store-Links spaeter.",
@@ -85,4 +86,3 @@ window.landingMessages.de = {
     "Eine durchdachte Verlosungserfahrung fuer Unterricht, Partys, Streams und Live-Events.",
   footerMeta: "Statisches Landingpage-Paket • 2026",
 };
-

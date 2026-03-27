@@ -8,7 +8,7 @@ window.landingMessages.ko = {
   heroTitle:
     '당첨 발표의 순간을 <span class="accent">진짜 메인 이벤트</span>로 바꾸세요.',
   heroLead:
-    "화려한 룰렛, 가챠 캡슐, 스크래치 카드, 추첨 볼, 슬롯, 사다리, 빠른 랜덤 모드까지. Joy Prize Draw는 단순한 랜덤 선택을 기억에 남는 발표 경험으로 바꿔 줍니다.",
+    "휠, 뽑기, 블라인드박스, 복권, 사다리, 슬롯, 스크래치, 랜덤까지. Joy Prize Draw는 단순한 랜덤 선택을 기억에 남는 발표 경험으로 바꿔 줍니다.",
   heroPrimaryCta: "추첨 모드 보기",
   heroSecondaryCta: "운영 기능 보기",
   heroNote:
@@ -25,10 +25,10 @@ window.landingMessages.ko = {
   modesIntro:
     "교실 발표, 라이브 경품 이벤트, 무대 추첨까지. 상황에 맞는 연출 템포를 고를 수 있습니다.",
   modes: [
-    { name: "룰렛", body: "가장 익숙한 방식이면서도 마지막 정지 순간이 강하게 느껴집니다.", image: "assets/img/prizewheel_thumbnail.png" },
-    { name: "가챠", body: "캡슐이 떨어지고 열리는 과정 자체가 재미있는 연출이 됩니다.", image: "assets/img/gacha_thumbnail.png" },
-    { name: "블라인드 박스", body: "열기 전의 긴장감을 유지하다가 한 번에 공개할 수 있습니다.", image: "assets/img/blindbox_thumbnail.png" },
-    { name: "복권 볼", body: "볼 추첨 움직임으로 이벤트다운 현장감을 만들어 줍니다.", image: "assets/img/lottery_thumbnail.png" },
+    { name: "휠", body: "가장 익숙한 방식이면서도 마지막 정지 순간이 강하게 느껴집니다.", image: "assets/img/prizewheel_thumbnail.png" },
+    { name: "뽑기", body: "캡슐이 떨어지고 열리는 과정 자체가 재미있는 연출이 됩니다.", image: "assets/img/gacha_thumbnail.png" },
+    { name: "블라인드박스", body: "열기 전의 긴장감을 유지하다가 한 번에 공개할 수 있습니다.", image: "assets/img/blindbox_thumbnail.png" },
+    { name: "복권", body: "볼 추첨 움직임으로 이벤트다운 현장감을 만들어 줍니다.", image: "assets/img/lottery_thumbnail.png" },
     { name: "사다리", body: "결과로 내려가는 경로가 보여서 게임쇼 같은 재미가 있습니다.", image: "assets/img/ladder_thumbnail.png" },
     { name: "슬롯", body: "3릴이 멈추는 타이밍으로 잭팟 같은 마무리를 줍니다.", image: "assets/img/slots_thumbnail.png" },
     { name: "스크래치", body: "직접 긁어 공개하는 손동작으로 참여감을 높일 수 있습니다.", image: "assets/img/scratch_thumbnail.png" },
@@ -40,7 +40,7 @@ window.landingMessages.ko = {
     "목록을 만들고, 분위기를 고르고, 결과를 남깁니다. 복잡한 툴 학습 없이도 바로 진행할 수 있습니다.",
   workflowSteps: [
     { title: "아이템 불러오기", body: "수동 입력, 대량 붙여넣기, 저장된 팩 재사용까지 지원해 반복 이벤트 준비가 빠릅니다." },
-    { title: "연출 선택", body: "룰렛, 가챠, 스크래치, 슬롯, 사다리, 복권 볼, 블라인드 박스, 빠른 랜덤 중에서 고를 수 있습니다." },
+    { title: "연출 선택", body: "휠, 뽑기, 블라인드박스, 복권, 사다리, 슬롯, 스크래치, 랜덤 중에서 고를 수 있습니다." },
     { title: "공개 후 기록 유지", body: "당첨 기록, 재추첨, 당첨 항목 제외까지 이어서 처리할 수 있어 진행 흐름이 끊기지 않습니다." },
   ],
   organizersEyebrow: "운영자 중심 기능",
@@ -65,12 +65,13 @@ window.landingMessages.ko = {
     { title: "파티와 경품 행사", body: "작은 상품도 발표 순간만큼은 특별하게 만들어 줍니다." },
   ],
   faqEyebrow: "자주 묻는 질문",
-  faqTitle: "공유하거나 배포하기 전에 많이 궁금해하는 내용입니다.",
+  faqTitle: "실제로 쓰기 전에 많이 묻는 내용입니다.",
   faqs: [
-    { q: "이 페이지를 바로 배포할 수 있나요?", a: "네. 랜딩 페이지는 정적 HTML, CSS, JavaScript, 이미지 자산만으로 구성되어 있어 대부분의 호스팅 서비스에 바로 올릴 수 있습니다." },
-    { q: "언어 전환은 어떻게 동작하나요?", a: "첫 방문 시 브라우저 언어를 확인해 지원 로케일로 자동 맞춤하고, 사용자가 수동으로 바꾼 선택은 이후에도 기억합니다." },
-    { q: "나중에 어떤 비주얼을 보강하면 좋을까요?", a: "현재 번들 아트만으로도 충분히 보기 좋습니다. 전환을 더 강화하려면 실제 앱 스크린샷, 디바이스 목업, 짧은 사용 장면 영상이 좋습니다." },
-    { q: "현재 앱 기능을 반영하나요?", a: "네. 지원 로케일, 추첨 모드, 저장 팩, 참가자 흐름, 내보내기, 기록 기능을 기준으로 작성했습니다." },
+    { q: "경품 추첨도 되고 사람 추첨도 되나요?", a: "네. 아이템만 뽑는 용도로 쓸 수 있고, 참가자 모드를 켜면 경품 목록과 사람 목록을 분리해서 운영할 수 있습니다." },
+    { q: "같은 당첨자가 반복해서 나오지 않게 할 수 있나요?", a: "아이템 추첨에서는 당첨 항목 제거를 쓸 수 있고, 참가자 모드에서는 당첨 제한을 설정해 같은 사람이 다시 뽑히지 않도록 할 수 있습니다." },
+    { q: "행사 전에 목록을 미리 준비해 둘 수 있나요?", a: "네. 수동 입력, 여러 줄 붙여넣기, 자동 번호 생성, 저장된 팩 재사용까지 지원합니다." },
+    { q: "팩과 기록은 이 기기에 저장되나요?", a: "네. 직접 내보내거나 공유하지 않는 한 작업 데이터는 기기에 로컬로 저장됩니다." },
+    { q: "행사 후에 결과를 다시 보거나 내보낼 수 있나요?", a: "네. 당첨 기록을 다시 확인할 수 있고, 필요하면 CSV나 TXT로 내보낼 수도 있습니다." },
   ],
   ctaEyebrow: "확장하기 쉬운 프런트엔드",
   ctaTitle: "지금은 이 버전으로 공개하고, 나중에 스토어 링크만 추가해도 충분합니다.",
@@ -83,4 +84,3 @@ window.landingMessages.ko = {
   footerTagline: "교실, 파티, 스트리밍, 라이브 이벤트를 위한 세련된 추첨 경험.",
   footerMeta: "정적 랜딩 페이지 패키지 • 2026",
 };
-

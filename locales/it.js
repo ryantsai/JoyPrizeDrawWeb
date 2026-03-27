@@ -9,7 +9,7 @@ window.landingMessages.it = {
   heroTitle:
     'Trasforma ogni rivelazione in un <span class="accent">vero momento da palco</span>.',
   heroLead:
-    "Ruota, gacha, gratta e vinci, palline della lotteria, slot, scala o modalita rapida: Joy Prize Draw trasforma una scelta casuale in una rivelazione piu scenica e memorabile.",
+    "Ruota, Gacha, Blind box, Lotteria, Scala, Slot, Gratta o modalita Casuale: Joy Prize Draw trasforma una scelta casuale in una rivelazione piu scenica e memorabile.",
   heroPrimaryCta: "Scopri le modalita",
   heroSecondaryCta: "Scopri gli strumenti",
   heroNote:
@@ -32,8 +32,8 @@ window.landingMessages.it = {
     { name: "Lotteria", body: "Le palline in movimento danno piu atmosfera da evento.", image: "assets/img/lottery_thumbnail.png" },
     { name: "Scala", body: "Il percorso verso il risultato diventa parte dello spettacolo.", image: "assets/img/ladder_thumbnail.png" },
     { name: "Slot", body: "Tre rulli, ritmo netto e un finale con gusto da jackpot.", image: "assets/img/slots_thumbnail.png" },
-    { name: "Scratch", body: "Si gratta la superficie per scoprire il vincitore sotto.", image: "assets/img/scratch_thumbnail.png" },
-    { name: "Random", body: "La scelta immediata quando conta soprattutto la velocita.", symbol: "★" },
+    { name: "Gratta", body: "Si gratta la superficie per scoprire il vincitore sotto.", image: "assets/img/scratch_thumbnail.png" },
+    { name: "Casuale", body: "La scelta immediata quando conta soprattutto la velocita.", symbol: "★" },
   ],
   workflowEyebrow: "Preparazione rapida",
   workflowTitle: "Dalla lista all'applauso in tre passaggi brevi.",
@@ -41,7 +41,7 @@ window.landingMessages.it = {
     "Carica gli elementi, scegli il tono e lascia che l'app gestisca rivelazione e storico.",
   workflowSteps: [
     { title: "Carica gli elementi", body: "Puoi inserirli a mano, incollare un elenco in blocco o riutilizzare un pacchetto gia salvato." },
-    { title: "Scegli l'energia", body: "Ruota, gacha, scratch, slot, scala, lotteria, blind box o modalita rapida in base al contesto." },
+    { title: "Scegli l'energia", body: "Ruota, Gacha, Blind box, Lotteria, Scala, Slot, Gratta o modalita Casuale in base al contesto." },
     { title: "Rivela e continua", body: "Storico, reroll e rimozione degli elementi gia estratti restano a portata di mano." },
   ],
   organizersEyebrow: "Pensato per chi organizza",
@@ -66,12 +66,13 @@ window.landingMessages.it = {
     { title: "Feste e giveaway", body: "Anche un premio piccolo puo sembrare piu speciale con una rivelazione ben fatta." },
   ],
   faqEyebrow: "Domande frequenti",
-  faqTitle: "Cosa si controlla di solito prima di pubblicare.",
+  faqTitle: "Quello che di solito si chiede prima di usarla davvero.",
   faqs: [
-    { q: "Si puo pubblicare cosi com'e?", a: "Si. L'intero pacchetto e composto da HTML, CSS, JavaScript e immagini statiche, quindi puo essere caricato direttamente sulla maggior parte delle piattaforme hosting." },
-    { q: "Come funziona la lingua?", a: "Alla prima visita la pagina rileva la lingua del browser, la abbina a una locale supportata e ricorda poi qualsiasi scelta manuale." },
-    { q: "Quali immagini conviene migliorare piu avanti?", a: "Le illustrazioni attuali offrono gia una buona base. Per aumentare la conversione, piu avanti e utile aggiungere screenshot reali o una breve demo." },
-    { q: "La pagina rispecchia le funzioni attuali dell'app?", a: "Si. Testi e struttura sono costruiti sulle locali supportate, sulle modalita di estrazione, sui pacchetti, sul flusso partecipanti, sugli export e sullo storico." },
+    { q: "Posso estrarre premi, persone o entrambe le cose?", a: "Si. Puoi usare l'app per estrazioni di soli elementi oppure attivare la modalita partecipanti per separare premi e lista delle persone." },
+    { q: "Come evito che esca due volte lo stesso vincitore?", a: "Nelle estrazioni di elementi puoi rimuovere i vincitori gia usciti. In modalita partecipanti puoi anche impostare limiti di vittoria." },
+    { q: "Posso preparare le liste prima dell'evento?", a: "Si. Sono supportati inserimento manuale, incolla in blocco, generazione automatica dei numeri e pacchetti riutilizzabili." },
+    { q: "Pacchetti e storico restano su questo dispositivo?", a: "Si. Finche non esporti o condividi nulla, i dati di lavoro restano salvati localmente sul dispositivo." },
+    { q: "Posso rivedere o esportare i risultati dopo?", a: "Si. Lo storico dei vincitori resta disponibile nell'app e, se serve, puoi esportare i dati in CSV o TXT." },
   ],
   ctaEyebrow: "Front-end pronto",
   ctaTitle: "Usa questa base adesso e aggiungi i link agli store quando sarai online.",
