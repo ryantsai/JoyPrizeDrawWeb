@@ -7,6 +7,7 @@ This folder is a pure front-end landing page package for `Joy Prize Draw`.
 - `index.html`
 - `styles.css`
 - `script.js`
+- `app-ads.txt`
 - `locales/*.js`
 - `assets/img/*`
 
@@ -57,3 +58,27 @@ python -m http.server 4173
 ```
 
 Then open `http://localhost:4173`.
+
+## app-ads.txt
+
+The landing page package includes `app-ads.txt` at its root so deployments copy it to
+the root of the published static site package.
+
+Current content:
+
+```text
+google.com, pub-6989394529598674, DIRECT, f08c47fec0942fa0
+```
+
+Important hosting note:
+
+- AdMob crawls `app-ads.txt` from the hostname portion of the developer website URL.
+- If the App Store / Play developer website is `https://ryantsai.github.io/JoyPrizeDrawWeb/`,
+  AdMob will typically check `https://ryantsai.github.io/app-ads.txt`, not the repo path
+  under `/JoyPrizeDrawWeb/`.
+- If you keep using GitHub Pages, the safest fix is to use a hostname where you control the
+  actual root, such as:
+  - a custom domain, or
+  - a Firebase Hosting domain like `https://YOUR_PROJECT_ID.web.app`
+- After moving the file to a hostname root, update the developer website URL in the store
+  listing to that hostname and wait at least 24 hours for AdMob to recrawl it.

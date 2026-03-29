@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover"
+    />
+    <title>Joy Prize Draw Download</title>
+    <meta
+      name="description"
+      content="Get Joy Prize Draw on your device."
+    />
+    <meta name="theme-color" content="#0d1230" />
+    <meta name="robots" content="noindex" />
+    <link rel="icon" type="image/png" href="assets/img/app_icon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;700;800&family=Space+Grotesk:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      .redirect-shell {
+        position: relative;
+        min-height: 100svh;
+        overflow: clip;
+      }
+
+      .redirect-noise,
+      .redirect-backdrop {
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+      }
+
+      .redirect-noise {
+        opacity: 0.22;
+        background-image:
+          radial-gradient(circle at 20% 12%, rgba(255, 255, 255, 0.18) 0 1px, transparent 1px),
+          radial-gradient(circle at 78% 24%, rgba(255, 255, 255, 0.16) 0 1px, transparent 1px),
+          radial-gradient(circle at 45% 78%, rgba(255, 255, 255, 0.12) 0 1px, transparent 1px);
+        background-size: 180px 180px, 210px 210px, 190px 190px;
+      }
+
+      .redirect-backdrop {
+        inset: 0 0 10%;
+        background:
+          linear-gradient(180deg, rgba(7, 12, 30, 0.26), rgba(7, 12, 30, 0.84)),
+          url("assets/img/store_banner.png") center / cover no-repeat;
+        mask-image: linear-gradient(180deg, rgba(0, 0, 0, 1) 82%, transparent 100%);
+      }
+
+      .redirect-main {
+        position: relative;
+        z-index: 1;
+        display: grid;
+        place-items: center;
+        min-height: 100svh;
+        padding: 32px 20px;
+      }
+
+      .redirect-card {
+        width: min(680px, 100%);
+        padding: clamp(28px, 4vw, 44px);
+        border: 1px solid var(--line);
+        border-radius: 32px;
+        background: linear-gradient(
+          180deg,
+          rgba(18, 27, 56, 0.88),
+          rgba(13, 20, 44, 0.76)
+        );
+        box-shadow: var(--shadow);
+        backdrop-filter: blur(18px);
+      }
+
+      .redirect-brand {
+        display: inline-flex;
+        align-items: center;
+        gap: 14px;
+        margin-bottom: 20px;
+        font-family: var(--heading-font);
+        font-weight: 700;
+      }
+
+      .redirect-brand img {
+        width: 56px;
+        height: 56px;
+        border-radius: 16px;
+        box-shadow: 0 12px 28px rgba(0, 0, 0, 0.32);
+      }
+
+      .redirect-card h1 {
+        margin: 0;
+        font-family: var(--heading-font);
+        font-size: clamp(2.4rem, 6vw, 4.1rem);
+        line-height: 0.96;
+        letter-spacing: -0.04em;
+      }
+
+      .redirect-card p {
+        margin: 16px 0 0;
+        color: var(--muted);
+        font-size: 1rem;
+        line-height: 1.7;
+      }
+
+      .redirect-status {
+        display: inline-flex;
+        align-items: center;
+        gap: 12px;
+        margin-top: 22px;
+        padding: 12px 16px;
+        border: 1px solid var(--line);
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.05);
+        color: var(--text);
+        font-weight: 600;
+      }
+
+      .redirect-status::before {
+        content: "";
+        width: 12px;
+        height: 12px;
+        border-radius: 999px;
+        background: linear-gradient(135deg, var(--gold), var(--orange));
+        box-shadow: 0 0 0 6px rgba(255, 209, 102, 0.12);
+      }
+
+      .redirect-status.pending::before {
+        animation: pulse 1.2s ease-in-out infinite;
+      }
+
+      .redirect-links {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        gap: 14px;
+        margin-top: 28px;
+      }
+
+      .redirect-link {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 58px;
+        padding: 14px 18px;
+        border: 1px solid var(--line);
+        border-radius: 18px;
+        background: rgba(255, 255, 255, 0.05);
+        font-weight: 700;
+        text-align: center;
+        transition:
+          transform 180ms ease,
+          border-color 180ms ease,
+          background 180ms ease;
+      }
+
+      .redirect-link:hover,
+      .redirect-link:focus-visible {
+        transform: translateY(-2px);
+        border-color: var(--line-strong);
+        background: rgba(255, 255, 255, 0.09);
+      }
+
+      .redirect-link.muted {
+        color: var(--muted);
+        cursor: default;
+      }
+
+      .redirect-link.muted:hover,
+      .redirect-link.muted:focus-visible {
+        transform: none;
+        border-color: var(--line);
+        background: rgba(255, 255, 255, 0.05);
+      }
+
+      .redirect-note {
+        margin-top: 18px;
+        font-size: 0.92rem;
+      }
+
+      .redirect-figure {
+        position: absolute;
+        right: clamp(14px, 4vw, 32px);
+        bottom: clamp(10px, 3vw, 24px);
+        width: min(150px, 24vw);
+        opacity: 0.95;
+        pointer-events: none;
+      }
+
+      @keyframes pulse {
+        0%,
+        100% {
+          transform: scale(1);
+          opacity: 1;
+        }
+
+        50% {
+          transform: scale(0.84);
+          opacity: 0.64;
+        }
+      }
+
+      @media (max-width: 720px) {
+        .redirect-card {
+          border-radius: 26px;
+        }
+
+        .redirect-links {
+          grid-template-columns: 1fr;
+        }
+
+        .redirect-figure {
+          width: 108px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="redirect-shell">
+      <div class="redirect-noise"></div>
+      <div class="redirect-backdrop"></div>
+
+      <main class="redirect-main">
+        <section class="redirect-card" aria-labelledby="redirect-title">
+          <div class="redirect-brand">
+            <img src="assets/img/logo.png" alt="" />
+            <span>Joy Prize Draw</span>
+          </div>
+
+          <p class="eyebrow">Smart Download</p>
+          <h1 id="redirect-title">Finding the best download page for your device.</h1>
+          <p id="redirect-message">
+            We are checking your platform now and will send you to the right store in a moment.
+          </p>
+
+          <div
+            id="redirect-status"
+            class="redirect-status pending"
+            aria-live="polite"
+          >
+            Detecting platform...
+          </div>
+
+          <div class="redirect-links" aria-label="Manual download links">
+            <a
+              class="redirect-link"
+              href="https://apps.apple.com/app/joy-prize-draw/id6760652642"
+              rel="noreferrer"
+            >
+              Download for iPhone / iPad
+            </a>
+            <a
+              class="redirect-link"
+              href="https://play.google.com/store/apps/details?id=com.ryantsai.joyprizedraw"
+              rel="noreferrer"
+            >
+              Download for Android
+            </a>
+            <a
+              class="redirect-link"
+              href="https://apps.microsoft.com/detail/9PJ4WX8N954J"
+              rel="noreferrer"
+            >
+              Download for Windows
+            </a>
+            <div
+              class="redirect-link muted"
+              role="note"
+              aria-label="macOS version not available yet"
+            >
+              macOS: Not available yet
+            </div>
+          </div>
+
+          <p class="redirect-note" id="redirect-note">
+            If the redirect does not start, choose your platform above.
+          </p>
+
+          <img
+            class="redirect-figure"
+            src="assets/img/hamster_celebrate.png"
+            alt=""
+            aria-hidden="true"
+          />
+        </section>
+      </main>
+    </div>
+
+    <script>
+      (function () {
+        const links = {
+          ios: "https://apps.apple.com/app/joy-prize-draw/id6760652642",
+          android:
+            "https://play.google.com/store/apps/details?id=com.ryantsai.joyprizedraw",
+          windows: "https://apps.microsoft.com/detail/9PJ4WX8N954J",
+        };
+
+        const status = document.getElementById("redirect-status");
+        const message = document.getElementById("redirect-message");
+        const note = document.getElementById("redirect-note");
+
+        function getPlatformInfo() {
+          const userAgent = navigator.userAgent || "";
+          const vendor = navigator.vendor || "";
+          const platform =
+            (navigator.userAgentData && navigator.userAgentData.platform) ||
+            navigator.platform ||
+            "";
+          const maxTouchPoints = navigator.maxTouchPoints || 0;
+
+          const isWindows = /Win/i.test(platform) || /Windows/i.test(userAgent);
+          const isAndroid = /Android/i.test(userAgent);
+          const isIPhoneOrIPad =
+            /iPhone|iPad|iPod/i.test(userAgent) ||
+            (platform === "MacIntel" && maxTouchPoints > 1);
+          const isMac =
+            /Mac/i.test(platform) &&
+            !isIPhoneOrIPad &&
+            !/CriOS/i.test(userAgent);
+
+          if (isIPhoneOrIPad) {
+            return { key: "ios", label: "iPhone or iPad" };
+          }
+
+          if (isAndroid) {
+            return { key: "android", label: "Android" };
+          }
+
+          if (isWindows) {
+            return { key: "windows", label: "Windows" };
+          }
+
+          if (isMac || /Mac OS X/i.test(userAgent) || /Apple/i.test(vendor)) {
+            return { key: "macos", label: "macOS" };
+          }
+
+          return { key: "unknown", label: "your device" };
+        }
+
+        const platformInfo = getPlatformInfo();
+
+        if (platformInfo.key in links) {
+          status.textContent = "Redirecting to the " + platformInfo.label + " download page...";
+          message.textContent =
+            "We detected " +
+            platformInfo.label +
+            " and are sending you to the right store now.";
+          note.textContent =
+            "If nothing happens, use the matching download link below.";
+
+          window.setTimeout(function () {
+            window.location.replace(links[platformInfo.key]);
+          }, 250);
+          return;
+        }
+
+        status.classList.remove("pending");
+
+        if (platformInfo.key === "macos") {
+          status.textContent = "macOS version not available yet";
+          message.textContent =
+            "We detected macOS. Joy Prize Draw is not available for macOS yet.";
+          note.textContent =
+            "You can still download the iPhone, Android, or Windows version from the links above.";
+          return;
+        }
+
+        status.textContent = "Choose your platform below";
+        message.textContent =
+          "We could not confidently detect your platform, so we left all download options here for you.";
+        note.textContent = "Pick the store that matches your device.";
+      })();
+    </script>
+  </body>
+</html>
