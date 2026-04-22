@@ -265,13 +265,13 @@
             >
               Download for Windows
             </a>
-            <div
-              class="redirect-link muted"
-              role="note"
-              aria-label="macOS version not available yet"
+            <a
+              class="redirect-link"
+              href="https://apps.apple.com/sn/app/joy-prize-draw/id6760652642?platform=mac"
+              rel="noreferrer"
             >
-              macOS: Not available yet
-            </div>
+              Download for macOS
+            </a>
           </div>
 
           <p class="redirect-note" id="redirect-note">
@@ -292,6 +292,8 @@
       (function () {
         const links = {
           ios: "https://apps.apple.com/app/joy-prize-draw/id6760652642",
+          macos:
+            "https://apps.apple.com/sn/app/joy-prize-draw/id6760652642?platform=mac",
           android:
             "https://play.google.com/store/apps/details?id=com.ryantsai.joyprizedraw",
           windows: "https://apps.microsoft.com/detail/9PJ4WX8N954J",
@@ -357,15 +359,6 @@
         }
 
         status.classList.remove("pending");
-
-        if (platformInfo.key === "macos") {
-          status.textContent = "macOS version not available yet";
-          message.textContent =
-            "We detected macOS. Joy Prize Draw is not available for macOS yet.";
-          note.textContent =
-            "You can still download the iPhone, Android, or Windows version from the links above.";
-          return;
-        }
 
         status.textContent = "Choose your platform below";
         message.textContent =

@@ -9,15 +9,15 @@
     <title>Joy Prize Draw</title>
     <meta
       name="description"
-      content="Spin the wheel, reveal winners, and run unforgettable prize draws with Joy Prize Draw."
+      content="Create prize and surprise draw events on Mac with animated modes, polished winner reveals, and shareable live sessions."
     />
     <meta
       property="og:title"
-      content="Joy Prize Draw | Prize reveals with real stage presence"
+      content="Joy Prize Draw | Mac-ready prize draws with stage presence"
     />
     <meta
       property="og:description"
-      content="A polished prize draw app for classrooms, parties, streams, and live events."
+      content="Create your own draw events, pick animated modes, reveal winners beautifully, and share live draw links from your Mac."
     />
     <meta property="og:type" content="website" />
     <meta property="og:image" content="assets/img/store_banner.png" />
@@ -26,10 +26,511 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;700;800&family=Noto+Sans+JP:wght@400;500;700;800&family=Noto+Sans+KR:wght@400;500;700;800&family=Noto+Sans+SC:wght@400;500;700;800&family=Noto+Sans+TC:wght@400;500;700;800&family=Space+Grotesk:wght@500;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;700;800&family=Fraunces:opsz,wght@9..144,700;9..144,800;9..144,900&family=Space+Grotesk:wght@500;700&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css" />
+    <style>
+      :root {
+        --mac-cream: #fff6ec;
+        --mac-ink: #2b1810;
+        --mac-ink-soft: #5a3a2a;
+        --mac-brand: #e85d1f;
+        --mac-brand-soft: #f59e3c;
+      }
+
+      body {
+        background:
+          radial-gradient(circle at top, rgba(245, 158, 60, 0.16), transparent 24%),
+          radial-gradient(circle at 82% 14%, rgba(255, 209, 102, 0.16), transparent 22%),
+          linear-gradient(180deg, #120c09 0%, #1d110a 28%, #0b1330 100%);
+      }
+
+      .site-header {
+        background: linear-gradient(
+          180deg,
+          rgba(18, 12, 9, 0.92),
+          rgba(18, 12, 9, 0.58) 68%,
+          rgba(18, 12, 9, 0)
+        );
+      }
+
+      .home-hero {
+        position: relative;
+        min-height: 100svh;
+        padding-top: calc(var(--header-height) + 40px);
+        padding-bottom: 56px;
+      }
+
+      .home-hero::before,
+      .home-hero::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+      }
+
+      .home-hero::before {
+        opacity: 0.18;
+        background-image:
+          radial-gradient(circle at 12% 20%, rgba(255, 255, 255, 0.22) 0 1px, transparent 1px),
+          radial-gradient(circle at 75% 24%, rgba(255, 255, 255, 0.14) 0 1px, transparent 1px),
+          radial-gradient(circle at 48% 78%, rgba(255, 255, 255, 0.12) 0 1px, transparent 1px);
+        background-size: 180px 180px, 220px 220px, 200px 200px;
+      }
+
+      .home-hero::after {
+        inset: 0 0 14%;
+        background:
+          linear-gradient(90deg, rgba(24, 13, 10, 0.94) 0%, rgba(24, 13, 10, 0.72) 44%, rgba(24, 13, 10, 0.28) 72%, rgba(24, 13, 10, 0.12) 100%),
+          url("assets/img/store_banner.png") center / cover no-repeat;
+        mask-image: linear-gradient(180deg, rgba(0, 0, 0, 1) 80%, transparent 100%);
+      }
+
+      .hero-layout {
+        position: relative;
+        z-index: 1;
+        display: grid;
+        grid-template-columns: minmax(0, 1.02fr) minmax(360px, 0.98fr);
+        gap: clamp(28px, 5vw, 72px);
+        align-items: center;
+        min-height: calc(100svh - var(--header-height) - 40px);
+      }
+
+      .hero-copy {
+        max-width: 41rem;
+      }
+
+      .hero-kicker,
+      .story-kicker,
+      .highlights-kicker,
+      .cta-kicker {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        padding: 10px 16px;
+        border-radius: 999px;
+        background: rgba(255, 246, 236, 0.12);
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        color: #ffe5c5;
+        font-size: 0.8rem;
+        font-weight: 700;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+      }
+
+      .hero-copy h1 {
+        margin: 18px 0 0;
+        font-family: "Fraunces", serif;
+        font-size: clamp(3.4rem, 7vw, 6.8rem);
+        line-height: 0.96;
+        letter-spacing: -0.05em;
+        text-wrap: balance;
+      }
+
+      .hero-copy h1 span,
+      .story-copy h2 span,
+      .showcase-head h2 span,
+      .cta-copy h2 span {
+        color: #ffd5aa;
+      }
+
+      .hero-lead {
+        max-width: 38rem;
+        margin: 24px 0 0;
+        color: rgba(248, 246, 239, 0.78);
+        font-size: 1.08rem;
+        line-height: 1.75;
+      }
+
+      .hero-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 14px;
+        margin-top: 30px;
+      }
+
+      .hero-points {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 16px;
+        margin: 36px 0 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      .hero-points li {
+        padding-top: 18px;
+        border-top: 1px solid rgba(255, 255, 255, 0.14);
+      }
+
+      .hero-points strong {
+        display: block;
+        margin-bottom: 6px;
+        font-family: "Space Grotesk", sans-serif;
+        font-size: clamp(1.2rem, 2vw, 1.7rem);
+        color: var(--mac-cream);
+      }
+
+      .hero-points span {
+        color: rgba(248, 246, 239, 0.74);
+        line-height: 1.55;
+      }
+
+      .hero-visual {
+        position: relative;
+        min-height: 660px;
+      }
+
+      .hero-panel {
+        position: absolute;
+        inset: 12% 5% 4% 11%;
+        overflow: hidden;
+        border-radius: 34px;
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        background: linear-gradient(
+          180deg,
+          rgba(255, 246, 236, 0.15),
+          rgba(255, 246, 236, 0.03)
+        );
+        box-shadow: 0 30px 80px rgba(0, 0, 0, 0.35);
+        backdrop-filter: blur(12px);
+      }
+
+      .hero-panel img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: top center;
+      }
+
+      .hero-badge {
+        position: absolute;
+        display: inline-flex;
+        align-items: center;
+        gap: 12px;
+        padding: 14px 18px;
+        border-radius: 20px;
+        background: rgba(255, 246, 236, 0.96);
+        color: var(--mac-ink);
+        box-shadow: 0 24px 48px rgba(0, 0, 0, 0.24);
+        font-weight: 700;
+      }
+
+      .hero-badge strong {
+        display: block;
+        font-family: "Space Grotesk", sans-serif;
+        font-size: 1rem;
+      }
+
+      .hero-badge span {
+        display: block;
+        font-size: 0.82rem;
+        color: var(--mac-ink-soft);
+      }
+
+      .hero-badge-left {
+        left: 0;
+        bottom: 16%;
+        transform: rotate(-5deg);
+      }
+
+      .hero-badge-right {
+        right: -2%;
+        top: 14%;
+        transform: rotate(5deg);
+      }
+
+      .hero-badge-icon {
+        display: grid;
+        place-items: center;
+        width: 44px;
+        height: 44px;
+        border-radius: 14px;
+        background: linear-gradient(135deg, var(--mac-brand), var(--mac-brand-soft));
+        color: white;
+        font-size: 1.2rem;
+      }
+
+      .story-section {
+        padding: 108px 0;
+      }
+
+      .story-head {
+        max-width: 48rem;
+        margin-bottom: 34px;
+      }
+
+      .story-head h2,
+      .showcase-head h2,
+      .cta-copy h2 {
+        margin: 16px 0 0;
+        font-family: "Fraunces", serif;
+        font-size: clamp(2.5rem, 5vw, 4.6rem);
+        line-height: 0.98;
+        letter-spacing: -0.04em;
+        text-wrap: balance;
+      }
+
+      .story-head p,
+      .showcase-head p,
+      .cta-copy p {
+        margin: 18px 0 0;
+        color: var(--muted);
+        line-height: 1.75;
+      }
+
+      .story-grid {
+        display: grid;
+        gap: 24px;
+      }
+
+      .story-card {
+        display: grid;
+        grid-template-columns: minmax(0, 1.08fr) minmax(320px, 0.92fr);
+        gap: clamp(20px, 4vw, 42px);
+        align-items: center;
+        padding: clamp(22px, 3vw, 34px);
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        border-radius: 34px;
+        background:
+          linear-gradient(180deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.02)),
+          rgba(14, 18, 34, 0.82);
+        box-shadow: var(--shadow);
+      }
+
+      .story-card:nth-child(even) .story-shot {
+        order: 2;
+      }
+
+      .story-card:nth-child(even) .story-copy {
+        order: 1;
+      }
+
+      .story-shot {
+        position: relative;
+      }
+
+      .story-shot::before {
+        content: "";
+        position: absolute;
+        inset: -16px;
+        border-radius: 34px;
+        background: radial-gradient(circle at top left, rgba(245, 158, 60, 0.22), transparent 50%);
+        z-index: 0;
+      }
+
+      .story-shot img {
+        position: relative;
+        z-index: 1;
+        width: 100%;
+        border-radius: 26px;
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        box-shadow: 0 22px 48px rgba(0, 0, 0, 0.28);
+      }
+
+      .story-copy {
+        position: relative;
+        z-index: 1;
+      }
+
+      .story-copy h2 {
+        margin: 14px 0 0;
+        font-family: "Fraunces", serif;
+        font-size: clamp(2rem, 4vw, 3.4rem);
+        line-height: 1;
+        letter-spacing: -0.04em;
+      }
+
+      .story-copy p {
+        margin: 16px 0 0;
+        color: var(--muted);
+        line-height: 1.72;
+        font-size: 1rem;
+      }
+
+      .story-notes {
+        display: grid;
+        gap: 12px;
+        margin: 24px 0 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      .story-notes li {
+        padding: 14px 16px;
+        border-radius: 18px;
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        color: rgba(248, 246, 239, 0.82);
+      }
+
+      .showcase-section {
+        padding: 108px 0;
+        background:
+          linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0)),
+          radial-gradient(circle at 20% 0%, rgba(245, 158, 60, 0.14), transparent 26%);
+      }
+
+      .showcase-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 18px;
+        margin-top: 30px;
+      }
+
+      .showcase-card {
+        overflow: hidden;
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        border-radius: 30px;
+        background:
+          linear-gradient(180deg, rgba(255, 255, 255, 0.07), rgba(255, 255, 255, 0.02)),
+          rgba(14, 18, 34, 0.76);
+        box-shadow: var(--shadow);
+      }
+
+      .showcase-card img {
+        width: 100%;
+        aspect-ratio: 4 / 3;
+        object-fit: cover;
+        object-position: top center;
+      }
+
+      .showcase-copy {
+        padding: 22px;
+      }
+
+      .showcase-copy h3 {
+        margin: 0;
+        font-family: "Space Grotesk", sans-serif;
+        font-size: 1.18rem;
+        letter-spacing: -0.03em;
+      }
+
+      .showcase-copy p {
+        margin: 10px 0 0;
+        color: var(--muted);
+        line-height: 1.68;
+      }
+
+      .cta-panel {
+        padding: 108px 0 120px;
+      }
+
+      .cta-shell {
+        position: relative;
+        overflow: hidden;
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(280px, 0.8fr);
+        gap: 24px;
+        align-items: center;
+        padding: clamp(28px, 5vw, 48px);
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        border-radius: 36px;
+        background:
+          linear-gradient(135deg, rgba(232, 93, 31, 0.18), rgba(17, 27, 55, 0.72)),
+          rgba(12, 17, 33, 0.9);
+        box-shadow: var(--shadow);
+      }
+
+      .cta-shell::after {
+        content: "";
+        position: absolute;
+        inset: auto -10% -24% auto;
+        width: 320px;
+        height: 320px;
+        border-radius: 50%;
+        background: radial-gradient(circle, rgba(255, 209, 102, 0.26), transparent 66%);
+        pointer-events: none;
+      }
+
+      .cta-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 14px;
+        margin-top: 28px;
+      }
+
+      .cta-visual {
+        position: relative;
+        min-height: 260px;
+      }
+
+      .cta-visual img {
+        position: absolute;
+        right: 0;
+        bottom: -12px;
+        width: min(100%, 360px);
+        border-radius: 28px;
+        box-shadow: 0 24px 48px rgba(0, 0, 0, 0.3);
+      }
+
+      @media (max-width: 1120px) {
+        .hero-layout,
+        .story-card,
+        .cta-shell {
+          grid-template-columns: 1fr;
+        }
+
+        .showcase-grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        .story-card:nth-child(even) .story-shot,
+        .story-card:nth-child(even) .story-copy {
+          order: initial;
+        }
+
+        .hero-visual {
+          min-height: 560px;
+        }
+      }
+
+      @media (max-width: 860px) {
+        .hero-points,
+        .showcase-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .home-hero {
+          padding-top: 26px;
+        }
+
+        .hero-layout {
+          min-height: auto;
+        }
+
+        .hero-visual {
+          min-height: 460px;
+        }
+      }
+
+      @media (max-width: 620px) {
+        .hero-panel {
+          inset: 14% 0 6%;
+        }
+
+        .hero-badge-left {
+          left: 0;
+          bottom: 6%;
+        }
+
+        .hero-badge-right {
+          right: 0;
+          top: 8%;
+        }
+
+        .hero-badge {
+          padding: 12px 14px;
+        }
+
+        .story-section,
+        .showcase-section,
+        .cta-panel {
+          padding: 84px 0;
+        }
+      }
+    </style>
   </head>
   <body>
     <div class="page-shell">
@@ -39,155 +540,260 @@
           <span>Joy Prize Draw</span>
         </a>
         <nav class="site-nav" aria-label="Primary">
-          <a id="nav-modes" href="#modes">Modes</a>
-          <a id="nav-flow" href="#workflow">Workflow</a>
-          <a id="nav-organizers" href="#organizers">Organizers</a>
-          <a id="nav-faq" href="#faq">FAQ</a>
+          <a href="#top">Home</a>
+          <a href="redirect.html">Download</a>
+          <a href="#support">Support</a>
         </nav>
-        <div class="language-control">
-          <label id="language-label" for="locale-select">Language</label>
-          <select id="locale-select" aria-labelledby="language-label"></select>
-        </div>
       </header>
 
       <main>
-        <section class="hero" id="top">
-          <div class="hero-noise"></div>
-          <div class="hero-backdrop"></div>
-          <div class="hero-grid container">
-            <div class="hero-copy reveal reveal-visible">
-              <p class="eyebrow" id="hero-eyebrow"></p>
-              <h1 id="hero-title"></h1>
-              <p class="hero-lead" id="hero-lead"></p>
+        <section class="home-hero" id="top">
+          <div class="container hero-layout">
+            <div class="hero-copy">
+              <p class="hero-kicker">Mac App Store Ready</p>
+              <h1>Create your own <span>prize and surprise</span> draw events.</h1>
+              <p class="hero-lead">
+                Joy Prize Draw brings your event table, classroom, stream, or party
+                stage to life with polished animation modes, clean setup tools,
+                memorable winner reveals, and live share links that keep everyone in
+                the moment.
+              </p>
               <div class="hero-actions">
-                <a class="button button-primary" id="hero-primary-cta" href="#modes"></a>
-                <a class="button button-secondary" id="hero-secondary-cta" href="#organizers"></a>
-                <a class="button button-secondary" href="redirect.html">Download App</a>
+                <a class="button button-primary" href="redirect.html">Download for Mac</a>
+                <a class="button button-secondary" href="#story">See the app in action</a>
               </div>
-              <ul class="hero-stats" id="hero-stats"></ul>
-              <p class="hero-note" id="hero-note"></p>
+              <ul class="hero-points">
+                <li>
+                  <strong>8 draw modes</strong>
+                  <span>Wheel, slots, gacha, lottery, blindbox, scratch, ladder, and easter egg.</span>
+                </li>
+                <li>
+                  <strong>Beautiful reveals</strong>
+                  <span>Turn simple picks into presentation moments that feel event-ready.</span>
+                </li>
+                <li>
+                  <strong>Built to share</strong>
+                  <span>Publish links and QR-friendly sessions so participants can join online.</span>
+                </li>
+              </ul>
             </div>
 
-            <div class="hero-visual reveal reveal-visible" aria-hidden="true">
-              <div class="visual-halo halo-one"></div>
-              <div class="visual-halo halo-two"></div>
-              <img class="visual-banner" src="assets/img/store_banner.png" alt="" />
-              <img class="visual-wheel" src="assets/img/prize_wheel.png" alt="" />
-              <img
-                class="visual-machine visual-gacha"
-                src="assets/img/gacha_machine.png"
-                alt=""
-              />
-              <img
-                class="visual-machine visual-slot"
-                src="assets/img/slot_machine.png"
-                alt=""
-              />
-              <img
-                class="visual-machine visual-lottery"
-                src="assets/img/lottery_machine.png"
-                alt=""
-              />
-              <div class="visual-chip chip-top" id="visual-chip-top"></div>
-              <div class="visual-chip chip-bottom" id="visual-chip-bottom"></div>
-              <img class="hamster hamster-hero" src="assets/img/hamster_peek_right.png" alt="" aria-hidden="true" />
-            </div>
-          </div>
-        </section>
-
-        <section class="section section-modes container reveal" id="modes">
-          <div class="section-head">
-            <p class="eyebrow" id="modes-eyebrow"></p>
-            <h2 id="modes-title"></h2>
-            <p id="modes-intro"></p>
-          </div>
-          <div class="mode-grid" id="mode-grid"></div>
-          <img class="hamster hamster-modes" src="assets/img/hamster_up1.png" alt="" aria-hidden="true" />
-        </section>
-
-        <section class="section section-workflow reveal" id="workflow">
-          <div class="container workflow-grid">
-            <div class="workflow-copy">
-              <p class="eyebrow" id="workflow-eyebrow"></p>
-              <h2 id="workflow-title"></h2>
-              <p class="section-lead" id="workflow-intro"></p>
-              <ol class="story-steps" id="workflow-steps"></ol>
-            </div>
-            <div class="workflow-media" aria-hidden="true">
-              <img class="workflow-thumbnail thumb-wheel" src="assets/img/prizewheel_thumbnail.png" alt="" />
-              <img class="workflow-thumbnail thumb-gacha" src="assets/img/gacha_thumbnail.png" alt="" />
-              <img class="workflow-thumbnail thumb-slot" src="assets/img/slots_thumbnail.png" alt="" />
-              <img class="workflow-thumbnail thumb-lottery" src="assets/img/lottery_thumbnail.png" alt="" />
-              <img class="hamster hamster-workflow" src="assets/img/hamster_peek_left.png" alt="" />
+            <div class="hero-visual" aria-hidden="true">
+              <div class="hero-panel">
+                <img src="assets/img/mac-wheel.png" alt="" />
+              </div>
+              <div class="hero-badge hero-badge-left">
+                <span class="hero-badge-icon">🎁</span>
+                <div>
+                  <strong>Ready to draw</strong>
+                  <span>Load prizes and start in seconds.</span>
+                </div>
+              </div>
+              <div class="hero-badge hero-badge-right">
+                <span class="hero-badge-icon">🏆</span>
+                <div>
+                  <strong>Stage presence</strong>
+                  <span>Made for real reveals, not plain lists.</span>
+                </div>
+              </div>
             </div>
           </div>
         </section>
 
-        <section class="section section-organizers container reveal" id="organizers">
-          <div class="organizer-media" aria-hidden="true">
-            <img class="organizer-main" src="assets/img/store_banner.png" alt="" />
-            <div class="organizer-strip">
-              <img src="assets/img/blindbox_thumbnail.png" alt="" />
-              <img src="assets/img/ladder_thumbnail.png" alt="" />
-              <img src="assets/img/scratch_thumbnail.png" alt="" />
+        <section class="story-section container" id="story">
+          <div class="story-head">
+            <p class="story-kicker">App Store Intro</p>
+            <h2>The Mac experience follows the same <span>seven-part story</span>.</h2>
+            <p>
+              This page uses the Mac App Store introduction flow as its backbone:
+              create the event, choose the animation, personalize the stage, manage
+              entries, reveal the winner, review history, and share the draw live.
+            </p>
+          </div>
+
+          <div class="story-grid">
+            <article class="story-card">
+              <div class="story-shot">
+                <img src="assets/img/mac-wheel.png" alt="Joy Prize Draw wheel mode on macOS" />
+              </div>
+              <div class="story-copy">
+                <p class="story-kicker">01 Create Your Own</p>
+                <h2>Create your own <span>prize and surprise</span> draw events.</h2>
+                <p>
+                  From office raffles to classroom rewards, Joy Prize Draw gives you
+                  a polished starting point for live picks on Mac. Load your entries,
+                  frame the event, and make the draw itself feel like part of the show.
+                </p>
+                <ul class="story-notes">
+                  <li>Ideal for events, streams, workshops, classrooms, and parties.</li>
+                  <li>Built to feel presentable on a projector, monitor, or external display.</li>
+                </ul>
+              </div>
+            </article>
+
+            <article class="story-card">
+              <div class="story-shot">
+                <img src="assets/img/mac-modes.png" alt="Joy Prize Draw draw mode selection on macOS" />
+              </div>
+              <div class="story-copy">
+                <p class="story-kicker">02 Pick the Animation</p>
+                <h2>Choose from <span>eight animation modes</span>.</h2>
+                <p>
+                  Match the energy of the moment with wheel, slots, gacha, lottery,
+                  blindbox, scratch, ladder, or easter egg. Each draw can feel playful,
+                  suspenseful, or fast-moving without changing your prize data.
+                </p>
+                <ul class="story-notes">
+                  <li>Swap styles to fit different audiences and event moods.</li>
+                  <li>Keep the same prize pool while changing the presentation style.</li>
+                </ul>
+              </div>
+            </article>
+
+            <article class="story-card">
+              <div class="story-shot">
+                <img src="assets/img/mac-gacha.png" alt="Joy Prize Draw customized background and themed presentation on macOS" />
+              </div>
+              <div class="story-copy">
+                <p class="story-kicker">03 Make It Yours</p>
+                <h2>Set <span>custom backgrounds</span> and themes.</h2>
+                <p>
+                  Personalize the stage with your own images, colors, and vibe. Whether
+                  it is a party theme, a school event, or a branded promo, the app can
+                  look like it belongs to your moment instead of fighting it.
+                </p>
+                <ul class="story-notes">
+                  <li>Use your own visuals to create a more event-specific atmosphere.</li>
+                  <li>Keep the interface playful while still feeling polished and intentional.</li>
+                </ul>
+              </div>
+            </article>
+
+            <article class="story-card">
+              <div class="story-shot">
+                <img src="assets/img/mac-prizes.png" alt="Joy Prize Draw prize editing screen on macOS" />
+              </div>
+              <div class="story-copy">
+                <p class="story-kicker">04 Set Up Fast</p>
+                <h2>Edit lists <span>in seconds</span>.</h2>
+                <p>
+                  Prize and participant setup is built for speed. Paste from a spreadsheet,
+                  bulk-load entries, add counts, and move from planning to live draw mode
+                  without wrestling with complex setup steps.
+                </p>
+                <ul class="story-notes">
+                  <li>Great for repeat events where entry lists change every time.</li>
+                  <li>Useful when you need to prepare a session quickly before people arrive.</li>
+                </ul>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <section class="showcase-section">
+          <div class="container">
+            <div class="showcase-head">
+              <p class="highlights-kicker">The Big Moments</p>
+              <h2>From <span>winner reveal</span> to full event recap.</h2>
+              <p>
+                The later App Store intro screens focus on what happens after setup:
+                the reveal, the record, and the shareable session link that lets the
+                event travel beyond one device.
+              </p>
             </div>
-            <img class="hamster hamster-organizers" src="assets/img/hamster_up2.png" alt="" aria-hidden="true" />
-          </div>
-          <div class="organizer-copy">
-            <p class="eyebrow" id="organizers-eyebrow"></p>
-            <h2 id="organizers-title"></h2>
-            <p class="section-lead" id="organizers-intro"></p>
-            <div class="feature-list" id="feature-list"></div>
+
+            <div class="showcase-grid">
+              <article class="showcase-card">
+                <img src="assets/img/mac-winner.png" alt="Joy Prize Draw winner reveal on macOS" />
+                <div class="showcase-copy">
+                  <h3>Present beautiful winner reveals</h3>
+                  <p>
+                    Celebration visuals help the winning moment land, whether you are
+                    drawing prizes on stage or announcing outcomes to a room full of people.
+                  </p>
+                </div>
+              </article>
+
+              <article class="showcase-card">
+                <img src="assets/img/mac-history.png" alt="Joy Prize Draw history view on macOS" />
+                <div class="showcase-copy">
+                  <h3>Keep track of every result</h3>
+                  <p>
+                    Review previous draws, see who won what, and keep a clean running
+                    history while the event continues.
+                  </p>
+                </div>
+              </article>
+
+              <article class="showcase-card">
+                <img src="assets/img/mac-publish.png" alt="Joy Prize Draw publish and share view on macOS" />
+                <div class="showcase-copy">
+                  <h3>Share draws with friends online</h3>
+                  <p>
+                    Publish a draw link or QR-ready session so people can follow along
+                    from their phones while you stay in control on Mac.
+                  </p>
+                </div>
+              </article>
+            </div>
           </div>
         </section>
 
-        <section class="section section-audiences container reveal" id="audiences">
-          <div class="section-head compact">
-            <p class="eyebrow" id="audiences-eyebrow"></p>
-            <h2 id="audiences-title"></h2>
-            <p id="audiences-intro"></p>
+        <section class="cta-panel container">
+          <div class="cta-shell">
+            <div class="cta-copy">
+              <p class="cta-kicker">Download</p>
+              <h2>Bring your next <span>draw event</span> to Mac.</h2>
+              <p>
+                If you want a prize draw app that feels more like a live presentation
+                tool than a plain random picker, Joy Prize Draw is ready for your next
+                event setup.
+              </p>
+              <div class="cta-actions">
+                <a class="button button-primary" href="https://apps.apple.com/sn/app/joy-prize-draw/id6760652642?platform=mac">Open Mac App Store</a>
+                <a class="button button-secondary" href="redirect.html">See all download options</a>
+              </div>
+            </div>
+            <div class="cta-visual" aria-hidden="true">
+              <img src="assets/img/mac-publish.png" alt="" />
+            </div>
           </div>
-          <div class="audience-grid" id="audience-grid"></div>
-          <img class="hamster hamster-audiences" src="assets/img/hamster_peek_right_wink.png" alt="" aria-hidden="true" />
         </section>
-
-        <section class="section section-faq container reveal" id="faq">
-          <div class="section-head compact">
-            <p class="eyebrow" id="faq-eyebrow"></p>
-            <h2 id="faq-title"></h2>
-          </div>
-          <div class="faq-list" id="faq-list"></div>
-          <img class="hamster hamster-faq" src="assets/img/hamster_peek_left_wink.png" alt="" aria-hidden="true" />
-        </section>
-
       </main>
 
-      <footer class="site-footer container">
-        <img class="hamster hamster-footer" src="assets/img/hamster_celebrate.png" alt="" aria-hidden="true" />
+      <footer class="site-footer container" id="support">
+        <img
+          class="hamster hamster-footer"
+          src="assets/img/hamster_celebrate.png"
+          alt=""
+          aria-hidden="true"
+        />
         <div>
           <p class="footer-brand">Joy Prize Draw</p>
-          <p id="footer-tagline"></p>
+          <p id="footer-tagline">
+            Prize draws with animated modes, polished reveals, and live sharing.
+          </p>
           <div class="footer-links" aria-label="Support links">
             <a href="mailto:publish@ryantsai.com">Support</a>
-            <a href="https://ryantsai.github.io/JoyPrizeDrawWeb/privacy.html" target="_blank" rel="noreferrer">Privacy Policy</a>
-            <a href="https://ryantsai.github.io/JoyPrizeDrawWeb/data-deletion.html" target="_blank" rel="noreferrer">Data Deletion</a>
+            <a
+              href="https://ryantsai.github.io/JoyPrizeDrawWeb/privacy.html"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Privacy Policy
+            </a>
+            <a
+              href="https://ryantsai.github.io/JoyPrizeDrawWeb/data-deletion.html"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Data Deletion
+            </a>
             <a href="mailto:publish@ryantsai.com">publish@ryantsai.com</a>
           </div>
         </div>
-        <p id="footer-meta"></p>
+        <p id="footer-meta">Mac landing page built from the App Store intro storyline.</p>
       </footer>
     </div>
-
-    <script src="locales/en.js"></script>
-    <script src="locales/ja.js"></script>
-    <script src="locales/zh.js"></script>
-    <script src="locales/zh-cn.js"></script>
-    <script src="locales/zh-tw.js"></script>
-    <script src="locales/ko.js"></script>
-    <script src="locales/fr.js"></script>
-    <script src="locales/de.js"></script>
-    <script src="locales/es.js"></script>
-    <script src="locales/it.js"></script>
-    <script src="script.js"></script>
   </body>
 </html>
