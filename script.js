@@ -135,7 +135,10 @@ function renderFeatures(features) {
   const root = document.getElementById("feature-list");
   root.innerHTML = "";
 
-  for (const feature of features) {
+  for (const [index, feature] of features.entries()) {
+    if (index === 2) {
+      continue;
+    }
     const item = document.createElement("div");
     item.className = "feature-item";
     item.innerHTML = `
@@ -209,6 +212,16 @@ function applyLocale(locale) {
   setText("hero-note", t.heroNote);
   setText("visual-chip-top", t.visualChipTop);
   setText("visual-chip-bottom", t.visualChipBottom);
+  setText("story-visual-eyebrow", t.modesEyebrow);
+  setText("story-visual-title", t.modesTitle);
+  setText("story-visual-body", t.modesIntro);
+  setText("story-visual-point-1", t.workflowSteps?.[1]?.body || "");
+  setText("story-visual-point-2", t.audiencesIntro);
+  setText("story-setup-eyebrow", t.workflowEyebrow);
+  setText("story-setup-title", t.workflowTitle);
+  setText("story-setup-body", t.workflowIntro);
+  setText("story-setup-point-1", t.workflowSteps?.[0]?.body || "");
+  setText("story-setup-point-2", t.workflowSteps?.[2]?.body || "");
   renderStats(t.stats);
 
   setText("modes-eyebrow", t.modesEyebrow);

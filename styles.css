@@ -785,103 +785,6 @@ select {
   transform: translateY(0);
 }
 
-/* ── Hamster decorations ─────────────────────── */
-
-.hamster {
-  position: absolute;
-  pointer-events: none;
-  z-index: 5;
-  filter: drop-shadow(0 8px 18px rgba(0, 0, 0, 0.35));
-}
-
-/* Hero — peeking in from the right edge of the visual area */
-.hamster-hero {
-  right: -18px;
-  bottom: 18%;
-  width: clamp(72px, 10vw, 110px);
-  animation: hamster-bob 4s ease-in-out infinite;
-}
-
-/* Modes — peeking up from bottom-right of the mode grid */
-.hamster-modes {
-  right: 4%;
-  bottom: -30px;
-  width: clamp(64px, 8vw, 96px);
-  animation: hamster-bob 5s ease-in-out 0.6s infinite;
-}
-
-/* Workflow — peeking from the left side of the media panel */
-.hamster-workflow {
-  left: -16px;
-  bottom: 38%;
-  width: clamp(60px, 8vw, 90px);
-  animation: hamster-bob 4.5s ease-in-out 1s infinite;
-}
-
-/* Organizers — peeking up from below the media strip */
-.hamster-organizers {
-  right: 8%;
-  bottom: -28px;
-  width: clamp(68px, 9vw, 100px);
-  animation: hamster-bob 5.2s ease-in-out 0.3s infinite;
-}
-
-/* Audiences — peeking from right edge, winking */
-.hamster-audiences {
-  right: -14px;
-  top: 50%;
-  transform: translateY(-50%);
-  width: clamp(56px, 7vw, 84px);
-  animation: hamster-bob 4.8s ease-in-out 0.8s infinite;
-}
-
-/* FAQ — peeking from left edge, winking */
-.hamster-faq {
-  left: -14px;
-  top: 38%;
-  width: clamp(56px, 7vw, 84px);
-  animation: hamster-bob 4.2s ease-in-out 1.2s infinite;
-}
-
-/* Footer — celebration hamster */
-.site-footer {
-  position: relative;
-}
-
-.hamster-footer {
-  position: absolute;
-  right: 0;
-  bottom: 16px;
-  width: clamp(80px, 10vw, 130px);
-  animation: hamster-bob 5.5s ease-in-out 0.4s infinite;
-  opacity: 0.92;
-}
-
-@keyframes hamster-bob {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-10px);
-  }
-}
-
-/* Audiences hamster needs special bob since it has translateY(-50%) */
-@keyframes hamster-bob-center {
-  0%, 100% {
-    transform: translateY(-50%);
-  }
-  50% {
-    transform: translateY(calc(-50% - 10px));
-  }
-}
-
-.hamster-audiences {
-  animation-name: hamster-bob-center;
-}
-
-/* ── /Hamster decorations ────────────────────── */
-
 @keyframes slow-spin {
   from {
     transform: rotate(0deg);
@@ -914,15 +817,6 @@ select {
 }
 
 @media (max-width: 1120px) {
-  .hamster-audiences,
-  .hamster-faq {
-    width: clamp(48px, 6vw, 68px);
-  }
-
-  .hamster-hero {
-    right: -8px;
-  }
-
   .hero-grid,
   .workflow-grid,
   .section-organizers {
@@ -1001,47 +895,6 @@ select {
 }
 
 @media (max-width: 620px) {
-  /* On small screens, keep hamsters but tuck them in tighter */
-  .hamster-hero {
-    right: -6px;
-    bottom: 8%;
-    width: 56px;
-  }
-
-  .hamster-modes {
-    right: 2%;
-    bottom: -20px;
-    width: 52px;
-  }
-
-  .hamster-workflow {
-    left: -8px;
-    width: 48px;
-  }
-
-  .hamster-organizers {
-    right: 4%;
-    bottom: -20px;
-    width: 56px;
-  }
-
-  .hamster-audiences,
-  .hamster-faq {
-    width: 44px;
-  }
-
-  .hamster-audiences {
-    right: -6px;
-  }
-
-  .hamster-faq {
-    left: -6px;
-  }
-
-  .hamster-footer {
-    width: 68px;
-  }
-
   .container {
     width: min(calc(100vw - 28px), 100%);
   }
