@@ -1,0 +1,246 @@
+/* =====================================================================
+   Joy Prize Draw — Colors & Type
+   Foundation tokens. Import this anywhere you need the brand.
+   --------------------------------------------------------------------- */
+
+/* Fonts ---------------------------------------------------------------
+   Brand face: jf open 粉圓 (jf-openhuninn) — a friendly humanist face,
+   bundled in fonts/. Single weight; we map the 300/400/500 tokens to it.
+   For older artifacts that referenced ABC Oracle / Inter Tight, the
+   --font-display chain still falls back gracefully.
+*/
+@font-face {
+  font-family: "Huninn";
+  src: url("fonts/jf-openhuninn-2.1.woff2") format("woff2");
+  font-weight: 300 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  /* ---------- Colors: brand palette --------------------------------- */
+  --color-ink-black:        #000000;  /* primary text, icons, borders */
+  --color-snow:             #ffffff;  /* card surfaces (90% opacity) */
+  --color-canvas:           #f8f8f8;  /* page background */
+  --color-fog:              #efefef;  /* sticky header */
+  --color-pebble:           #d9d9d9;  /* neutral filled buttons */
+  --color-ash:              #7c7c7c;  /* secondary body, subtle borders */
+  --color-graphite:         #636363;  /* body text, secondary copy */
+  --color-slate:            #959595;  /* tertiary text, captions */
+  --color-steel:            #aeaeae;  /* disabled, indicator dots */
+
+  /* Spectrum gradient stops — used WITHIN the gradient, not as solids */
+  --color-rose-quartz:      #c679c4;
+  --color-spectrum-red:     #fa3d1d;
+  --color-marigold:         #ffb005;
+  --color-lavender:         #e1e1fe;
+  --color-signal-blue:      #0358f7;
+  --color-hot-pink:         #fd02f5;
+
+  /* The signature gradient — replaces a traditional brand color */
+  --gradient-spectrum: linear-gradient(
+    90deg,
+    #c679c4 0%,
+    #fa3d1d 25%,
+    #ffb005 50%,
+    #e1e1fe 75%,
+    #0358f7 100%
+  );
+
+  /* ---------- Semantic surfaces ------------------------------------- */
+  --surface-canvas:         var(--color-canvas);
+  --surface-header:         var(--color-fog);
+  --surface-card:           rgba(255, 255, 255, 0.9);
+  --surface-button-fill:    var(--color-pebble);
+  --surface-soft:           rgba(0, 0, 0, 0.04);   /* announcement pill */
+
+  /* ---------- Semantic text ----------------------------------------- */
+  --text-primary:           var(--color-ink-black);
+  --text-secondary:         var(--color-graphite);
+  --text-tertiary:          var(--color-slate);
+  --text-disabled:          var(--color-steel);
+  --text-on-fill:           rgba(0, 0, 0, 0.85);
+
+  /* ---------- Type families ----------------------------------------- */
+  --font-display: "Huninn", "ABC Oracle", "Inter Tight", ui-sans-serif, system-ui,
+                  -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-body:    var(--font-display);
+
+  /* ---------- Type scale (raw tokens) ------------------------------- */
+  --text-caption:           10px;   --leading-caption:     1.5;
+  --text-body-sm:           14px;   --leading-body-sm:     1.5;
+  --text-body:              16px;   --leading-body:        1.5;
+  --text-subheading:        18px;   --leading-subheading:  1.33;
+  --text-heading-sm:        22px;   --leading-heading-sm:  1.25;   --tracking-heading-sm: -0.44px;
+  --text-heading:           50px;   --leading-heading:     1.18;   --tracking-heading:    -2px;
+  --text-heading-lg:        54px;   --leading-heading-lg:  1.17;   --tracking-heading-lg: -2.16px;
+  --text-display:           72px;   --leading-display:     1.11;   --tracking-display:    -2.88px;
+
+  --weight-light:           300;
+  --weight-regular:         400;
+  --weight-medium:          500;
+
+  /* ---------- Spacing ---------------------------------------------- */
+  --spacing-unit:   8px;
+  --spacing-5:      5px;
+  --spacing-6:      6px;
+  --spacing-10:    10px;
+  --spacing-14:    14px;
+  --spacing-15:    15px;
+  --spacing-20:    20px;
+  --spacing-24:    24px;
+  --spacing-32:    32px;
+  --spacing-34:    34px;
+
+  /* ---------- Layout ------------------------------------------------ */
+  --page-max-width:    1200px;
+  --section-gap:       100px;
+  --card-padding:       32px;
+  --element-gap:        18px;
+
+  /* ---------- Radii ------------------------------------------------- */
+  --radius-img:      10px;
+  --radius-nav:      16px;
+  --radius-banner:   20px;
+  --radius-card:     30px;
+  --radius-button:   30px;
+  --radius-container:40px;
+  --radius-pill:     9999px;
+
+  /* ---------- Shadows ---------------------------------------------- */
+  --shadow-sm:  rgba(0, 0, 0, 0.08) 0px 0px 8px 0px;
+
+  /* ---------- Motion ----------------------------------------------- */
+  --ease-micro:    0.2s ease;
+  --ease-chroma:   0.9s cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+/* =====================================================================
+   Semantic element styles — apply directly or as @apply-style references
+   --------------------------------------------------------------------- */
+
+html, body {
+  background: var(--surface-canvas);
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  font-size: var(--text-body);
+  line-height: var(--leading-body);
+  font-weight: var(--weight-regular);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+.h-display, h1.display {
+  font-family: var(--font-display);
+  font-size: var(--text-display);
+  line-height: var(--leading-display);
+  letter-spacing: var(--tracking-display);
+  font-weight: var(--weight-light);
+  color: var(--text-primary);
+}
+
+.h-lg, h1 {
+  font-family: var(--font-display);
+  font-size: var(--text-heading-lg);
+  line-height: var(--leading-heading-lg);
+  letter-spacing: var(--tracking-heading-lg);
+  font-weight: var(--weight-light);
+  color: var(--text-primary);
+}
+
+.h-md, h2 {
+  font-family: var(--font-display);
+  font-size: var(--text-heading);
+  line-height: var(--leading-heading);
+  letter-spacing: var(--tracking-heading);
+  font-weight: var(--weight-light);
+  color: var(--text-primary);
+}
+
+.h-sm, h3 {
+  font-family: var(--font-display);
+  font-size: var(--text-heading-sm);
+  line-height: var(--leading-heading-sm);
+  letter-spacing: var(--tracking-heading-sm);
+  font-weight: var(--weight-medium);
+  color: var(--text-primary);
+}
+
+.subheading, h4 {
+  font-size: var(--text-subheading);
+  line-height: var(--leading-subheading);
+  font-weight: var(--weight-regular);
+  color: var(--text-secondary);
+}
+
+p, .body { font-size: var(--text-body); line-height: var(--leading-body); color: var(--text-secondary); }
+.body-sm { font-size: var(--text-body-sm); line-height: var(--leading-body-sm); color: var(--text-secondary); }
+.caption  { font-size: var(--text-caption);  line-height: var(--leading-caption);  color: var(--text-tertiary); }
+
+a {
+  color: var(--text-primary);
+  text-decoration: underline;
+  text-decoration-color: currentColor;
+  transition: text-decoration-color var(--ease-micro);
+}
+a:hover { text-decoration-color: rgba(0,0,0,0.3); }
+
+/* =====================================================================
+   Surface utilities
+   --------------------------------------------------------------------- */
+.surface-card {
+  background: var(--surface-card);
+  -webkit-backdrop-filter: blur(24px);
+  backdrop-filter: blur(24px);
+  border-radius: var(--radius-card);
+  padding: var(--card-padding);
+  box-shadow: var(--shadow-sm);
+}
+
+.surface-header {
+  background: var(--surface-header);
+  -webkit-backdrop-filter: blur(24px);
+  backdrop-filter: blur(24px);
+}
+
+/* =====================================================================
+   Buttons
+   --------------------------------------------------------------------- */
+.btn {
+  font-family: var(--font-display);
+  font-size: var(--text-body-sm);
+  font-weight: var(--weight-medium);
+  letter-spacing: 0;
+  border: none;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  white-space: nowrap;
+  transition: background-color var(--ease-micro), color var(--ease-micro);
+}
+
+.btn-filled {
+  background: var(--surface-button-fill);
+  color: var(--text-on-fill);
+  border-radius: var(--radius-button);
+  padding: 12px 22px;
+}
+.btn-filled:hover { background: var(--color-ink-black); color: #fff; }
+
+.btn-ghost {
+  background: transparent;
+  color: var(--text-on-fill);
+  border-radius: var(--radius-pill);
+  padding: 10px 18px;
+}
+.btn-ghost:hover { background: rgba(0,0,0,0.04); }
+
+.btn-soft {
+  background: var(--surface-soft);
+  color: var(--text-on-fill);
+  border-radius: var(--radius-nav);
+  padding: 10px 24px;
+}
+.btn-soft:hover { background: rgba(0,0,0,0.08); }

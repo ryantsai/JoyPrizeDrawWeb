@@ -1,619 +1,630 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, viewport-fit=cover"
-    />
-    <title>Joy Prize Draw</title>
-    <meta
-      name="description"
-      content="Spin the wheel, reveal winners, and run unforgettable prize draws with Joy Prize Draw."
-    />
-    <meta
-      property="og:title"
-      content="Joy Prize Draw | Prize reveals with real stage presence"
-    />
-    <meta
-      property="og:description"
-      content="A polished prize draw app for classrooms, parties, streams, and live events."
-    />
-    <meta property="og:type" content="website" />
-    <meta property="og:image" content="assets/img/store_banner.png" />
-    <meta name="theme-color" content="#0d1230" />
-    <link rel="icon" type="image/png" href="assets/img/app_icon.png" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;700;800&family=Noto+Sans+JP:wght@400;500;700;800&family=Noto+Sans+KR:wght@400;500;700;800&family=Noto+Sans+SC:wght@400;500;700;800&family=Noto+Sans+TC:wght@400;500;700;800&family=Fraunces:opsz,wght@9..144,700;9..144,800;9..144,900&family=Space+Grotesk:wght@500;700&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="styles.css" />
-    <style>
-      :root {
-        --promo-cream: #fff5e9;
-        --promo-ink: #2f1d13;
-        --promo-soft: #6b4634;
-        --promo-orange: #e85d1f;
-        --promo-amber: #f59e3c;
-      }
-
-      body {
-        background:
-          radial-gradient(circle at top, rgba(245, 158, 60, 0.18), transparent 26%),
-          radial-gradient(circle at 82% 12%, rgba(255, 209, 102, 0.18), transparent 22%),
-          linear-gradient(180deg, #111217 0%, #151325 35%, #091123 100%);
-      }
-
-      .site-nav {
-        gap: 18px;
-      }
-
-      .landing-hero {
-        position: relative;
-        min-height: 100svh;
-        padding-top: calc(var(--header-height) + 42px);
-        padding-bottom: 58px;
-      }
-
-      .landing-hero::before,
-      .landing-hero::after {
-        content: "";
-        position: absolute;
-        inset: 0;
-        pointer-events: none;
-      }
-
-      .landing-hero::before {
-        opacity: 0.18;
-        background-image:
-          radial-gradient(circle at 18% 14%, rgba(255, 255, 255, 0.22) 0 1px, transparent 1px),
-          radial-gradient(circle at 72% 24%, rgba(255, 255, 255, 0.16) 0 1px, transparent 1px),
-          radial-gradient(circle at 42% 82%, rgba(255, 255, 255, 0.12) 0 1px, transparent 1px);
-        background-size: 190px 190px, 220px 220px, 200px 200px;
-      }
-
-      .landing-hero::after {
-        inset: 0 0 14%;
-        background:
-          linear-gradient(90deg, rgba(17, 18, 23, 0.95) 0%, rgba(17, 18, 23, 0.78) 44%, rgba(17, 18, 23, 0.32) 72%, rgba(17, 18, 23, 0.08) 100%),
-          url("assets/img/store_banner.png") center / cover no-repeat;
-        mask-image: linear-gradient(180deg, rgba(0, 0, 0, 1) 80%, transparent 100%);
-      }
-
-      .hero-layout {
-        position: relative;
-        z-index: 1;
-        display: grid;
-        grid-template-columns: minmax(0, 1fr) minmax(360px, 0.98fr);
-        gap: clamp(28px, 5vw, 72px);
-        align-items: center;
-        min-height: calc(100svh - var(--header-height) - 42px);
-      }
-
-      .hero-copy {
-        max-width: 42rem;
-      }
-
-      .hero-copy .eyebrow {
-        display: inline-flex;
-        align-items: center;
-        gap: 10px;
-        padding: 10px 16px;
-        border-radius: 999px;
-        background: rgba(255, 245, 233, 0.12);
-        border: 1px solid rgba(255, 255, 255, 0.12);
-        color: #ffe4c0;
-      }
-
-      .hero-copy h1 {
-        margin: 18px 0 0;
-        font-family: "Fraunces", serif;
-        font-size: clamp(3.2rem, 7vw, 6.8rem);
-        line-height: 0.96;
-        letter-spacing: -0.05em;
-        text-wrap: balance;
-      }
-
-      .hero-copy h1 .accent {
-        color: #ffd7ad;
-      }
-
-      .hero-lead {
-        max-width: 38rem;
-        margin: 22px 0 0;
-        color: rgba(248, 246, 239, 0.78);
-      }
-
-      .hero-actions {
-        margin-top: 30px;
-      }
-
-      .hero-visual {
-        position: relative;
-        min-height: 660px;
-      }
-
-      .hero-stage {
-        position: absolute;
-        inset: 10% 3% 4% 10%;
-        border-radius: 34px;
-        overflow: hidden;
-        border: 1px solid rgba(255, 255, 255, 0.12);
-        background:
-          linear-gradient(180deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.02)),
-          rgba(14, 18, 34, 0.82);
-        box-shadow: 0 28px 90px rgba(0, 0, 0, 0.34);
-      }
-
-      .hero-stage img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        object-position: top center;
-      }
-
-      .hero-badge {
-        position: absolute;
-        z-index: 1;
-        display: inline-flex;
-        align-items: center;
-        gap: 12px;
-        padding: 14px 18px;
-        border-radius: 22px;
-        background: rgba(255, 245, 233, 0.96);
-        color: var(--promo-ink);
-        box-shadow: 0 24px 48px rgba(0, 0, 0, 0.24);
-      }
-
-      .hero-badge::before {
-        content: "";
-        width: 14px;
-        height: 14px;
-        border-radius: 50%;
-        background: linear-gradient(135deg, var(--promo-orange), var(--promo-amber));
-        box-shadow: 0 0 0 8px rgba(232, 93, 31, 0.12);
-      }
-
-      .badge-top {
-        top: 14%;
-        right: -2%;
-        transform: rotate(4deg);
-      }
-
-      .badge-bottom {
-        left: 0;
-        bottom: 15%;
-        transform: rotate(-5deg);
-      }
-
-      .hero-note {
-        margin-top: 20px;
-      }
-
-      .promo-section {
-        position: relative;
-        padding: 108px 0;
-      }
-
-      .promo-head {
-        max-width: 50rem;
-        margin-bottom: 34px;
-      }
-
-      .promo-head h2 {
-        margin: 14px 0 0;
-        font-family: "Fraunces", serif;
-        font-size: clamp(2.5rem, 5vw, 4.6rem);
-        line-height: 0.98;
-        letter-spacing: -0.04em;
-        text-wrap: balance;
-      }
-
-      .promo-head p {
-        margin: 18px 0 0;
-        color: var(--muted);
-        line-height: 1.75;
-      }
-
-      .story-grid {
-        display: grid;
-        gap: 24px;
-      }
-
-      .story-card {
-        display: grid;
-        grid-template-columns: minmax(0, 1.06fr) minmax(320px, 0.94fr);
-        gap: clamp(20px, 4vw, 42px);
-        align-items: center;
-        padding: clamp(22px, 3vw, 34px);
-        border: 1px solid rgba(255, 255, 255, 0.12);
-        border-radius: 34px;
-        background:
-          linear-gradient(180deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.02)),
-          rgba(14, 18, 34, 0.82);
-        box-shadow: var(--shadow);
-      }
-
-      .story-card.reverse .story-copy {
-        order: 1;
-      }
-
-      .story-card.reverse .story-shot {
-        order: 2;
-      }
-
-      .story-shot {
-        position: relative;
-      }
-
-      .story-shot::before {
-        content: "";
-        position: absolute;
-        inset: -14px;
-        border-radius: 30px;
-        background: radial-gradient(circle at top left, rgba(245, 158, 60, 0.22), transparent 54%);
-        z-index: 0;
-      }
-
-      .story-shot img {
-        position: relative;
-        z-index: 1;
-        width: 100%;
-        border-radius: 26px;
-        border: 1px solid rgba(255, 255, 255, 0.12);
-        box-shadow: 0 22px 48px rgba(0, 0, 0, 0.28);
-      }
-
-      .story-copy .eyebrow {
-        margin-bottom: 12px;
-      }
-
-      .story-copy h3,
-      .organizer-copy h3 {
-        margin: 0;
-        font-family: "Fraunces", serif;
-        font-size: clamp(2rem, 4vw, 3.2rem);
-        line-height: 1;
-        letter-spacing: -0.04em;
-      }
-
-      .story-copy p,
-      .organizer-copy p {
-        margin: 16px 0 0;
-        color: var(--muted);
-        line-height: 1.72;
-      }
-
-      .story-points {
-        display: grid;
-        gap: 12px;
-        margin: 24px 0 0;
-      }
-
-      .story-points div {
-        padding: 14px 16px;
-        border-radius: 18px;
-        background: rgba(255, 255, 255, 0.05);
-        border: 1px solid rgba(255, 255, 255, 0.08);
-      }
-
-      .mode-grid {
-        grid-template-columns: repeat(4, minmax(0, 1fr));
-      }
-
-      .mode-card {
-        min-height: 340px;
-        border-radius: 28px;
-      }
-
-      .mode-card img {
-        aspect-ratio: 4 / 3;
-      }
-
-      .section-workflow {
-        background:
-          linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0)),
-          radial-gradient(circle at 18% 0%, rgba(245, 158, 60, 0.12), transparent 28%);
-      }
-
-      .workflow-grid {
-        display: grid;
-        grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.08fr);
-        gap: clamp(28px, 5vw, 64px);
-        align-items: center;
-      }
-
-      .workflow-copy h2,
-      .organizer-copy h2,
-      .section-head h2 {
-        font-family: "Fraunces", serif;
-      }
-
-      .workflow-media {
-        min-height: auto;
-      }
-
-      .workflow-stage {
-        display: grid;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 16px;
-      }
-
-      .workflow-stage img {
-        width: 100%;
-        border-radius: 24px;
-        border: 1px solid rgba(255, 255, 255, 0.12);
-        box-shadow: 0 18px 42px rgba(0, 0, 0, 0.24);
-      }
-
-      .workflow-thumbnail,
-      .workflow-media::before,
-      .organizer-main,
-      .organizer-strip {
-        display: none;
-      }
-
-      .section-organizers {
-        display: grid;
-        grid-template-columns: minmax(0, 1.02fr) minmax(0, 0.98fr);
-        gap: clamp(28px, 5vw, 56px);
-        align-items: center;
-      }
-
-      .organizer-media {
-        display: grid;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 16px;
-      }
-
-      .organizer-media img {
-        width: 100%;
-        border-radius: 26px;
-        border: 1px solid rgba(255, 255, 255, 0.12);
-        box-shadow: 0 18px 42px rgba(0, 0, 0, 0.26);
-      }
-
-      .organizer-feature-strip {
-        display: grid;
-        gap: 18px;
-      }
-
-      .feature-list {
-        margin-top: 26px;
-      }
-
-      .feature-item {
-        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-      }
-
-      @media (max-width: 1120px) {
-        .hero-layout,
-        .story-card,
-        .workflow-grid,
-        .section-organizers {
-          grid-template-columns: 1fr;
-        }
-
-        .story-card.reverse .story-copy,
-        .story-card.reverse .story-shot {
-          order: initial;
-        }
-
-        .mode-grid,
-        .audience-grid,
-        .faq-list {
-          grid-template-columns: repeat(2, minmax(0, 1fr));
-        }
-      }
-
-      @media (max-width: 860px) {
-        .landing-hero {
-          padding-top: 26px;
-        }
-
-        .hero-layout {
-          min-height: auto;
-        }
-
-        .hero-visual {
-          min-height: 460px;
-        }
-
-        .mode-grid,
-        .workflow-stage,
-        .organizer-media,
-        .audience-grid,
-        .faq-list {
-          grid-template-columns: 1fr;
-        }
-      }
-
-      @media (max-width: 620px) {
-        .hero-stage {
-          inset: 14% 0 6%;
-        }
-
-        .badge-top {
-          right: 0;
-        }
-
-        .badge-bottom {
-          left: 0;
-          bottom: 6%;
-        }
-
-        .promo-section,
-        .section {
-          padding: 84px 0;
-        }
-      }
-    </style>
-  </head>
-  <body>
-    <div class="page-shell">
-      <header class="site-header">
-        <a class="brand" href="#top" aria-label="Joy Prize Draw home">
-          <img src="assets/img/logo.png" alt="" />
-          <span>Joy Prize Draw</span>
-        </a>
-        <nav class="site-nav" aria-label="Primary">
-          <a href="#top">Home</a>
-          <a href="redirect.html">Download</a>
-          <a href="#support">Support</a>
-        </nav>
-        <div class="language-control">
-          <label id="language-label" for="locale-select">Language</label>
-          <select id="locale-select" aria-labelledby="language-label"></select>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Joy Prize Draw — Win something good.</title>
+  <meta name="description" content="A polished prize draw app for classrooms, parties, streams, and live events. Eight ways to land on a winner.">
+  <meta property="og:title" content="Joy Prize Draw">
+  <meta property="og:description" content="Eight ways to land on a winner without losing the room.">
+  <link rel="icon" type="image/png" href="img/app_icon.png">
+  <link rel="stylesheet" href="colors_and_type.css">
+  <style>
+    html[dir="rtl"] { direction: rtl; }
+    html[dir="rtl"] .header-right { margin-left: 0; margin-right: auto; }
+    html[dir="rtl"] nav.links { margin-left: 0; margin-right: 14px; }
+    html[dir="rtl"] .brand { flex-direction: row; }
+    html[dir="rtl"] .steps li { direction: ltr; text-align: left; }
+    html[dir="rtl"] .mascot { flex-direction: row-reverse; }
+    .lang-select {
+      font-family: inherit; font-size: 13px; font-weight: 500;
+      background: rgba(0,0,0,0.04); border: none; border-radius: 14px;
+      padding: 7px 12px; color: rgba(0,0,0,0.85); cursor: pointer;
+      outline: none; -webkit-appearance: none; appearance: none;
+      text-align-last: center;
+    }
+    .lang-select:hover { background: rgba(0,0,0,0.08); }
+  
+    body { margin: 0; background: #f8f8f8; overflow-x: hidden; }
+    .wrap { max-width: 1180px; margin: 0 auto; padding: 0 24px; }
+    *::-webkit-scrollbar { display: none; }
+
+    /* ============== HEADER ============== */
+    header.bar {
+      position: sticky; top: 14px; z-index: 30;
+      max-width: 1180px; margin: 14px auto 0;
+      display: flex; align-items: center; gap: 14px;
+      padding: 10px 14px;
+      background: rgba(239,239,239,0.85);
+      backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px);
+      border-radius: 20px;
+    }
+    .brand { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+    .brand img { width: 32px; height: 32px; border-radius: 8px; }
+    .brand-name {
+      font-size: 18px; font-weight: 500; letter-spacing: -0.4px; color: #000;
+    }
+    nav.links { display: flex; gap: 4px; margin-left: 14px; }
+    nav.links a {
+      font-size: 14px; color: #000; text-decoration: none;
+      padding: 8px 14px; border-radius: 9999px;
+      transition: background-color 0.2s ease;
+    }
+    nav.links a:hover { background: rgba(0,0,0,0.04); }
+    .header-right { margin-left: auto; display: flex; gap: 8px; align-items: center; }
+    .pill {
+      background: rgba(0,0,0,0.04);
+      padding: 9px 18px; font-size: 13px; border-radius: 16px;
+      color: rgba(0,0,0,0.85);
+    }
+
+    /* ============== HERO ============== */
+    .hero {
+      position: relative;
+      padding: 80px 24px 40px;
+      max-width: 1180px; margin: 0 auto;
+      text-align: center;
+    }
+    .hero-glow {
+      position: absolute; left: 8%; right: 8%;
+      top: 200px; height: 460px;
+      background: var(--gradient-spectrum);
+      filter: blur(90px); opacity: 0.42;
+      border-radius: 200px; z-index: 0; pointer-events: none;
+    }
+    .eyebrow {
+      position: relative; z-index: 1;
+      font-size: 14px; color: #636363; margin: 0;
+      text-transform: none; letter-spacing: 0;
+    }
+    h1.headline {
+      position: relative; z-index: 1;
+      font-size: 92px; font-weight: 300; letter-spacing: -3.5px;
+      line-height: 1.02; margin: 16px 0 22px; color: #000;
+      max-width: 900px; margin-left: auto; margin-right: auto;
+      text-wrap: balance;
+    }
+    h1 .accent { color: #000; font-style: italic; font-weight: 300; }
+    .lead {
+      position: relative; z-index: 1;
+      font-size: 18px; color: #636363; line-height: 1.5;
+      max-width: 580px; margin: 0 auto 32px;
+    }
+    .ctas {
+      position: relative; z-index: 1;
+      display: flex; gap: 10px; justify-content: center; flex-wrap: wrap;
+    }
+    .ctas a.btn { text-decoration: none; }
+    .ctas .btn-filled { padding: 14px 26px; font-size: 16px; }
+    .ctas .btn-ghost  { padding: 14px 22px; font-size: 16px; }
+    .stats {
+      position: relative; z-index: 1;
+      display: flex; gap: 36px; justify-content: center;
+      list-style: none; padding: 0; margin: 50px 0 0;
+    }
+    .stats li { display: flex; flex-direction: column; gap: 2px; }
+    .stats .v { font-size: 32px; font-weight: 300; letter-spacing: -1px; color: #000; }
+    .stats .l { font-size: 13px; color: #959595; }
+
+    /* ============== HERO SHOT ============== */
+    .shot-wrap {
+      position: relative;
+      max-width: 980px; margin: 70px auto 0;
+    }
+    .shot-glow {
+      position: absolute; inset: -50px;
+      background: var(--gradient-spectrum);
+      filter: blur(70px); opacity: 0.35;
+      border-radius: 80px; z-index: 0;
+    }
+    .shot {
+      position: relative; z-index: 1;
+      background: #fff; border-radius: 16px;
+      box-shadow: rgba(0,0,0,0.08) 0 0 8px 0;
+      overflow: hidden;
+    }
+    .shot-chrome {
+      display: flex; align-items: center; gap: 7px;
+      padding: 11px 14px; background: #efefef;
+    }
+    .shot-chrome .dot { width: 11px; height: 11px; border-radius: 9999px; }
+    .shot-chrome .url {
+      flex: 1; margin-left: 10px; background: #fff; border-radius: 8px;
+      padding: 5px 12px; font-size: 12px; color: #636363; text-align: center;
+    }
+    .shot img { width: 100%; display: block; }
+
+    /* ============== SECTIONS ============== */
+    section.section { padding: 100px 0; }
+    .section-head { max-width: 720px; margin: 0 auto 50px; text-align: center; }
+    .section-head h2 {
+      font-size: 56px; font-weight: 300; letter-spacing: -2.2px;
+      line-height: 1.05; margin: 12px 0 16px; color: #000;
+      text-wrap: balance;
+    }
+    .section-head p { font-size: 17px; color: #636363; line-height: 1.55; margin: 0; }
+
+    /* Modes grid */
+    .modes-grid {
+      display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px;
+    }
+    .mode-card {
+      background: rgba(255,255,255,0.9);
+      backdrop-filter: blur(24px);
+      border-radius: 30px; padding: 22px;
+      box-shadow: var(--shadow-sm);
+      display: flex; flex-direction: column; gap: 14px;
+    }
+    .mode-thumb {
+      aspect-ratio: 1 / 1; width: 100%;
+      border-radius: 18px;
+      background: #f8f8f8;
+      display: flex; align-items: center; justify-content: center;
+      overflow: hidden;
+    }
+    .mode-thumb img { width: 84%; height: 84%; object-fit: contain; }
+    .mode-symbol {
+      font-size: 56px; font-weight: 300; color: #000;
+    }
+    .mode-name {
+      font-size: 22px; font-weight: 500; letter-spacing: -0.44px; color: #000;
+    }
+    .mode-body { font-size: 14px; color: #636363; line-height: 1.5; margin: 0; }
+
+    /* Story rows */
+    .story {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 60px;
+      align-items: center; margin-bottom: 80px;
+    }
+    .story:last-child { margin-bottom: 0; }
+    .story.reverse .story-shot { order: 2; }
+    .story.reverse .story-copy { order: 1; }
+    .story-shot {
+      position: relative; padding: 30px;
+    }
+    .story-shot::before {
+      content: ""; position: absolute; inset: 10px;
+      background: var(--gradient-spectrum);
+      filter: blur(50px); opacity: 0.3; border-radius: 60px; z-index: 0;
+    }
+    .story-shot img {
+      position: relative; z-index: 1;
+      width: 100%; border-radius: 16px;
+      box-shadow: rgba(0,0,0,0.08) 0 0 8px 0;
+    }
+    .story-copy h3 {
+      font-size: 44px; font-weight: 300; letter-spacing: -1.6px;
+      line-height: 1.05; margin: 12px 0 16px; color: #000;
+    }
+    .story-copy p { font-size: 17px; color: #636363; line-height: 1.6; margin: 0; }
+    .story-points { display: flex; flex-direction: column; gap: 10px; margin-top: 24px; }
+    .story-points div {
+      background: rgba(255,255,255,0.7);
+      backdrop-filter: blur(12px);
+      padding: 14px 18px; border-radius: 16px;
+      font-size: 14px; color: #000;
+      box-shadow: inset 0 0 0 1px rgba(0,0,0,0.04);
+    }
+
+    /* Workflow */
+    .workflow-grid {
+      display: grid; grid-template-columns: 0.95fr 1.05fr;
+      gap: 60px; align-items: center;
+    }
+    .workflow-stage {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 14px;
+    }
+    .workflow-stage img {
+      width: 100%; border-radius: 14px;
+      box-shadow: rgba(0,0,0,0.08) 0 0 8px 0;
+    }
+    .steps { list-style: none; padding: 0; margin: 24px 0 0;
+             display: flex; flex-direction: column; gap: 18px;
+             counter-reset: step; }
+    .steps li {
+      counter-increment: step;
+      display: grid; grid-template-columns: 36px 1fr; gap: 16px;
+      align-items: start;
+    }
+    .steps li::before {
+      content: counter(step, decimal-leading-zero);
+      font-size: 14px; font-weight: 500; color: #000;
+      width: 32px; height: 32px; border-radius: 9999px;
+      background: rgba(0,0,0,0.04);
+      display: flex; align-items: center; justify-content: center;
+    }
+    .steps li strong { font-size: 18px; font-weight: 500; color: #000; display: block; margin-bottom: 4px; }
+    .steps li p { font-size: 15px; color: #636363; line-height: 1.55; margin: 0; }
+
+    /* Organizer features */
+    .organizer-grid {
+      display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 60px; align-items: start;
+    }
+    .organizer-media {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 14px;
+    }
+    .organizer-media img {
+      width: 100%; border-radius: 14px;
+      box-shadow: rgba(0,0,0,0.08) 0 0 8px 0;
+    }
+    .feat-list {
+      display: flex; flex-direction: column; gap: 4px; margin-top: 26px;
+    }
+    .feat {
+      padding: 18px 4px; border-bottom: 1px solid rgba(0,0,0,0.06);
+    }
+    .feat:last-child { border-bottom: 0; }
+    .feat strong { font-size: 17px; font-weight: 500; color: #000; display: block; margin-bottom: 4px; }
+    .feat p { font-size: 14px; color: #636363; line-height: 1.55; margin: 0; }
+
+    /* Audiences */
+    .aud-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+    .aud {
+      background: rgba(255,255,255,0.9); backdrop-filter: blur(24px);
+      border-radius: 30px; padding: 28px;
+      box-shadow: var(--shadow-sm);
+    }
+    .aud strong { font-size: 22px; font-weight: 500; letter-spacing: -0.44px; color: #000; display: block; margin-bottom: 10px; }
+    .aud p { font-size: 15px; color: #636363; line-height: 1.55; margin: 0; }
+
+    /* Hamster — small chromatic moment */
+    .mascot {
+      display: flex; align-items: center; justify-content: center; gap: 18px;
+      padding: 60px 24px;
+    }
+    .mascot img { height: 90px; }
+    .mascot-text {
+      font-size: 20px; font-weight: 400; color: #000; letter-spacing: -0.4px;
+      max-width: 360px;
+    }
+    .mascot-text span { color: #636363; display: block; font-size: 14px; margin-top: 4px; }
+
+    /* FAQ */
+    .faq-list { max-width: 760px; margin: 0 auto; }
+    details {
+      border-bottom: 1px solid rgba(0,0,0,0.06);
+      padding: 22px 0;
+    }
+    details summary {
+      list-style: none; cursor: pointer;
+      font-size: 18px; font-weight: 500; color: #000;
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 16px;
+    }
+    details summary::-webkit-details-marker { display: none; }
+    details summary::after {
+      content: "+"; font-size: 22px; font-weight: 300; color: #959595;
+      transition: transform 0.2s ease;
+    }
+    details[open] summary::after { content: "−"; }
+    details p { font-size: 15px; color: #636363; line-height: 1.65; margin: 12px 0 0; }
+
+    /* Bottom CTA */
+    .cta {
+      position: relative;
+      max-width: 1100px; margin: 80px auto 0;
+      padding: 90px 40px;
+      text-align: center;
+      border-radius: 40px; overflow: hidden;
+    }
+    .cta-glow {
+      position: absolute; inset: 0;
+      background: var(--gradient-spectrum);
+      filter: blur(60px); opacity: 0.45; z-index: 0;
+    }
+    .cta-card {
+      position: relative; z-index: 1;
+      background: rgba(255,255,255,0.85); backdrop-filter: blur(30px);
+      border-radius: 30px; padding: 60px 40px;
+      box-shadow: rgba(0,0,0,0.08) 0 0 8px 0;
+    }
+    .cta-card h2 { font-size: 56px; font-weight: 300; letter-spacing: -2.2px; margin: 0 0 20px; color: #000; line-height: 1.05; }
+    .cta-card p { font-size: 17px; color: #636363; max-width: 520px; margin: 0 auto 28px; line-height: 1.55; }
+
+    /* Footer */
+    footer.foot {
+      max-width: 1180px; margin: 100px auto 0;
+      padding: 40px 24px 60px;
+    }
+    .foot-grid { display: grid; grid-template-columns: 1.4fr 2fr; gap: 60px; padding-bottom: 30px; }
+    .foot-tag { font-size: 16px; color: #636363; margin: 14px 0 0; max-width: 320px; line-height: 1.55; }
+    .foot-cols { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .foot-cols strong { font-size: 14px; font-weight: 500; color: #000; display: block; margin-bottom: 12px; }
+    .foot-cols a { display: block; font-size: 14px; color: #636363; text-decoration: none; padding: 5px 0; }
+    .foot-cols a:hover { color: #000; }
+    .foot-strip {
+      height: 4px; border-radius: 9999px;
+      background: var(--gradient-spectrum);
+      margin: 20px 0;
+    }
+    .foot-fine {
+      display: flex; justify-content: center; gap: 14px;
+      font-size: 13px; color: #959595; flex-wrap: wrap;
+    }
+
+    /* Responsive */
+    @media (max-width: 1024px) {
+      .modes-grid { grid-template-columns: repeat(2, 1fr); }
+      .story, .workflow-grid, .organizer-grid { grid-template-columns: 1fr; gap: 40px; }
+      .story.reverse .story-shot { order: initial; }
+      .story.reverse .story-copy { order: initial; }
+      .aud-grid { grid-template-columns: 1fr; }
+      .foot-grid { grid-template-columns: 1fr; gap: 30px; }
+    }
+    @media (max-width: 720px) {
+      h1.headline { font-size: 56px; letter-spacing: -2px; }
+      .section-head h2, .cta-card h2 { font-size: 38px; letter-spacing: -1.4px; }
+      .modes-grid { grid-template-columns: 1fr; }
+      .stats { gap: 20px; flex-wrap: wrap; }
+      nav.links { display: none; }
+      .header-right .pill { display: none; }
+    }
+  </style>
+  <script src="i18n.js"></script>
+</head>
+<body>
+
+<header class="bar">
+  <a class="brand" href="#top">
+    <img src="img/logo.png" alt="">
+    <span class="brand-name">Joy Prize Draw</span>
+  </a>
+  <nav class="links">
+    <a href="#modes" data-i18n="nav_modes">Draw modes</a>
+    <a href="#workflow" data-i18n="nav_workflow">Workflow</a>
+    <a href="#organizers" data-i18n="nav_organizers">Organizers</a>
+    <a href="#faq" data-i18n="nav_faq">FAQ</a>
+  </nav>
+  <div class="header-right">
+    <select id="lang-select" class="lang-select" onchange="window.__i18nSwitch(this.value)" data-i18n-title="lang_selector">
+      <option value="en">English</option>
+      <option value="zh-hans">简体中文</option>
+      <option value="zh-hant">繁體中文</option>
+      <option value="ja">日本語</option>
+      <option value="ko">한국어</option>
+      <option value="fr">Français</option>
+      <option value="de">Deutsch</option>
+      <option value="es">Español</option>
+      <option value="it">Italiano</option>
+      <option value="tr-tr">Türkçe</option>
+      <option value="id-id">Bahasa Indonesia</option>
+      <option value="es-419">Español (AL)</option>
+      <option value="ar">العربية</option>
+      <option value="th-th">ไทย</option>
+      <option value="vi-vn">Tiếng Việt</option>
+      <option value="pt-br">Português (BR)</option>
+    </select>
+    <span class="pill" data-i18n="pill">8 modes · 15 packs · 10 locales</span>
+    <a class="btn btn-filled" href="redirect.html" data-i18n="btn_download">Download</a>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-glow"></div>
+    <p class="eyebrow" data-i18n="eyebrow_hero">A prize draw app for classrooms, parties, streams, and live events</p>
+    <h1 class="headline"><span data-i18n="headline_p1">Make every winner reveal feel like the </span><span class="accent" data-i18n="headline_accent">main event</span><span data-i18n="headline_p2">.</span></h1>
+    <p class="lead" data-i18n="lead_hero">
+      Spin a wheel, crack a gacha capsule, drop a lottery ball, scratch off a winner.
+      Eight modes. One polished show.
+    </p>
+    <div class="ctas">
+      <a class="btn btn-filled" href="redirect.html" data-i18n="cta_get_app">Get the app</a>
+      <a class="btn btn-ghost" href="#modes" data-i18n="cta_explore">Explore the modes</a>
+    </div>
+    <ul class="stats">
+      <li><span class="v">8</span><span class="l" data-i18n="stat_ways_label">ways to reveal a winner</span></li>
+      <li><span class="v">15</span><span class="l" data-i18n="stat_packs_label">starter packs included</span></li>
+      <li><span class="v">10</span><span class="l" data-i18n="stat_locales_label">supported locales</span></li>
+    </ul>
+
+    <div class="shot-wrap">
+      <div class="shot-glow"></div>
+      <div class="shot">
+        <div class="shot-chrome">
+          <span class="dot" style="background:#ff5f57"></span>
+          <span class="dot" style="background:#febc2e"></span>
+          <span class="dot" style="background:#28c840"></span>
+          <span class="url" data-i18n="chrome_url">joy.app · prize wheel</span>
         </div>
-      </header>
+        <img src="img/mac-wheel.png" alt="Joy Prize Draw running the prize wheel mode" data-i18n-alt="alt_wheel">
+      </div>
+    </div>
+  </section>
 
-      <main>
-        <section class="landing-hero" id="top">
-          <div class="container hero-layout">
-            <div class="hero-copy reveal reveal-visible">
-              <p class="eyebrow" id="hero-eyebrow"></p>
-              <h1 id="hero-title"></h1>
-              <p class="hero-lead" id="hero-lead"></p>
-              <div class="hero-actions">
-                <a class="button button-primary" id="hero-primary-cta" href="#modes"></a>
-                <a class="button button-secondary" id="hero-secondary-cta" href="#workflow"></a>
-                <a class="button button-secondary" href="redirect.html">Download App</a>
-              </div>
-              <ul class="hero-stats" id="hero-stats"></ul>
-              <p class="hero-note" id="hero-note"></p>
-            </div>
-
-            <div class="hero-visual reveal reveal-visible" aria-hidden="true">
-              <div class="hero-stage">
-                <img src="assets/img/mac-wheel.png" alt="" />
-              </div>
-              <div class="hero-badge badge-top" id="visual-chip-top"></div>
-              <div class="hero-badge badge-bottom" id="visual-chip-bottom"></div>
-            </div>
-          </div>
-        </section>
-
-        <section class="promo-section container reveal" id="story">
-          <div class="promo-head">
-            <p class="eyebrow" id="modes-eyebrow"></p>
-            <h2 id="modes-title"></h2>
-            <p id="modes-intro"></p>
-          </div>
-
-          <div class="story-grid">
-            <article class="story-card">
-              <div class="story-shot">
-                <img src="assets/img/mac-modes.png" alt="" />
-              </div>
-              <div class="story-copy">
-                <p class="eyebrow" id="story-visual-eyebrow"></p>
-                <h3 id="story-visual-title"></h3>
-                <p id="story-visual-body"></p>
-                <div class="story-points">
-                  <div id="story-visual-point-1"></div>
-                  <div id="story-visual-point-2"></div>
-                </div>
-              </div>
-            </article>
-
-            <article class="story-card reverse">
-              <div class="story-shot">
-                <img src="assets/img/mac-prizes.png" alt="" />
-              </div>
-              <div class="story-copy">
-                <p class="eyebrow" id="story-setup-eyebrow"></p>
-                <h3 id="story-setup-title"></h3>
-                <p id="story-setup-body"></p>
-                <div class="story-points">
-                  <div id="story-setup-point-1"></div>
-                  <div id="story-setup-point-2"></div>
-                </div>
-              </div>
-            </article>
-          </div>
-        </section>
-
-        <section class="section section-modes container reveal" id="modes">
-          <div class="mode-grid" id="mode-grid"></div>
-        </section>
-
-        <section class="section section-workflow reveal" id="workflow">
-          <div class="container workflow-grid">
-            <div class="workflow-copy">
-              <p class="eyebrow" id="workflow-eyebrow"></p>
-              <h2 id="workflow-title"></h2>
-              <p class="section-lead" id="workflow-intro"></p>
-              <ol class="story-steps" id="workflow-steps"></ol>
-            </div>
-            <div class="workflow-media" aria-hidden="true">
-              <div class="workflow-stage">
-                <img src="assets/img/mac-gacha.png" alt="" />
-                <img src="assets/img/mac-winner.png" alt="" />
-                <img src="assets/img/mac-history.png" alt="" />
-                <img src="assets/img/mac-publish.png" alt="" />
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section class="section section-organizers container reveal" id="organizers">
-          <div class="organizer-media" aria-hidden="true">
-            <img src="assets/img/mac-winner.png" alt="" />
-            <img src="assets/img/mac-publish.png" alt="" />
-            <img src="assets/img/mac-history.png" alt="" />
-            <img src="assets/img/mac-gacha.png" alt="" />
-          </div>
-          <div class="organizer-copy">
-            <p class="eyebrow" id="organizers-eyebrow"></p>
-            <h2 id="organizers-title"></h2>
-            <p class="section-lead" id="organizers-intro"></p>
-            <div class="feature-list" id="feature-list"></div>
-          </div>
-        </section>
-
-        <section class="section section-audiences container reveal" id="audiences">
-          <div class="section-head compact">
-            <p class="eyebrow" id="audiences-eyebrow"></p>
-            <h2 id="audiences-title"></h2>
-            <p id="audiences-intro"></p>
-          </div>
-          <div class="audience-grid" id="audience-grid"></div>
-        </section>
-
-        <section class="section section-faq container reveal" id="faq">
-          <div class="section-head compact">
-            <p class="eyebrow" id="faq-eyebrow"></p>
-            <h2 id="faq-title"></h2>
-          </div>
-          <div class="faq-list" id="faq-list"></div>
-        </section>
-      </main>
-
-      <footer class="site-footer container" id="support">
-        <div>
-          <p class="footer-brand">Joy Prize Draw</p>
-          <p id="footer-tagline"></p>
-          <div class="footer-links" aria-label="Support links">
-            <a href="mailto:publish@ryantsai.com">Support</a>
-            <a href="https://ryantsai.github.io/JoyPrizeDrawWeb/privacy.html" target="_blank" rel="noreferrer">Privacy Policy</a>
-            <a href="https://ryantsai.github.io/JoyPrizeDrawWeb/data-deletion.html" target="_blank" rel="noreferrer">Data Deletion</a>
-          </div>
-        </div>
-      </footer>
+  <!-- STORY -->
+  <section class="section wrap" id="story">
+    <div class="section-head">
+      <p class="eyebrow" data-i18n="eyebrow_story">How it feels in the room</p>
+      <h2 data-i18n="story_h2">Two screens. One unforgettable moment.</h2>
+      <p data-i18n="story_p">Each mode carries its own visual rhythm, so you can match the energy of a classroom reveal, a live giveaway, or a quick random pick.</p>
     </div>
 
-    <script src="locales/en.js"></script>
-    <script src="locales/ja.js"></script>
-    <script src="locales/zh.js"></script>
-    <script src="locales/zh-cn.js"></script>
-    <script src="locales/zh-tw.js"></script>
-    <script src="locales/ko.js"></script>
-    <script src="locales/fr.js"></script>
-    <script src="locales/de.js"></script>
-    <script src="locales/es.js"></script>
-    <script src="locales/it.js"></script>
-    <script src="script.js"></script>
-  </body>
+    <div class="story">
+      <div class="story-shot">
+        <img src="img/mac-modes.png" alt="">
+      </div>
+      <div class="story-copy">
+        <p class="eyebrow" data-i18n="story1_eyebrow">Pick the energy</p>
+        <h3 data-i18n="story1_h3">Eight modes, one feel.</h3>
+        <p data-i18n="story1_p">Every animation lands cleanly. No gaudy effects, no random easing — just deliberate motion that reads from the back of the room.</p>
+        <div class="story-points">
+          <div data-i18n="story1_point1">Smooth deceleration on every spin and drop.</div>
+          <div data-i18n="story1_point2">One consistent reveal beat across all 8 modes.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="story reverse">
+      <div class="story-shot">
+        <img src="img/mac-prizes.png" alt="">
+      </div>
+      <div class="story-copy">
+        <p class="eyebrow" data-i18n="story2_eyebrow">Set up in seconds</p>
+        <h3 data-i18n="story2_h3">Add prizes, save packs, run again.</h3>
+        <p data-i18n="story2_p">Type, paste, or auto-number. Reusable packs mean the same event next week takes one tap to load.</p>
+        <div class="story-points">
+          <div data-i18n="story2_point1">Bulk paste, one item per line.</div>
+          <div data-i18n="story2_point2">15 starter packs included — Tarot, lunch picks, story starters, more.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MODES -->
+  <section class="section wrap" id="modes">
+    <div class="section-head">
+      <p class="eyebrow" data-i18n="eyebrow_modes">Draw modes</p>
+      <h2 data-i18n="modes_h2">Eight ways to land on a winner.</h2>
+      <p data-i18n="modes_p">Match the moment with the right reveal. Switch modes anytime — your prize list comes with you.</p>
+    </div>
+    <div class="modes-grid">
+      <div class="mode-card"><div class="mode-thumb"><img src="img/prizewheel_thumbnail.png"></div><div class="mode-name" data-i18n="mode_wheel_name">Wheel</div><p class="mode-body" data-i18n="mode_wheel_desc">Classic fortune-wheel energy with smooth deceleration and a strong final stop.</p></div>
+      <div class="mode-card"><div class="mode-thumb"><img src="img/gacha_thumbnail.png"></div><div class="mode-name" data-i18n="mode_gacha_name">Gacha</div><p class="mode-body" data-i18n="mode_gacha_desc">Shake, drop, and crack a capsule open for a more playful reveal.</p></div>
+      <div class="mode-card"><div class="mode-thumb"><img src="img/blindbox_thumbnail.png"></div><div class="mode-name" data-i18n="mode_blindbox_name">Blindbox</div><p class="mode-body" data-i18n="mode_blindbox_desc">Turn mystery into suspense, then reveal with one clean tap.</p></div>
+      <div class="mode-card"><div class="mode-thumb"><img src="img/lottery_thumbnail.png"></div><div class="mode-name" data-i18n="mode_lottery_name">Lottery</div><p class="mode-body" data-i18n="mode_lottery_desc">A ball-drop draw for event nights and high-attention moments.</p></div>
+      <div class="mode-card"><div class="mode-thumb"><img src="img/ladder_thumbnail.png"></div><div class="mode-name" data-i18n="mode_ladder_name">Ladder</div><p class="mode-body" data-i18n="mode_ladder_desc">Route the outcome through a ladder path for a game-show feel.</p></div>
+      <div class="mode-card"><div class="mode-thumb"><img src="img/slots_thumbnail.png"></div><div class="mode-name" data-i18n="mode_slots_name">Slots</div><p class="mode-body" data-i18n="mode_slots_desc">Three reels, ticking animation, jackpot-style finish.</p></div>
+      <div class="mode-card"><div class="mode-thumb"><img src="img/scratch_thumbnail.png"></div><div class="mode-name" data-i18n="mode_scratch_name">Scratch</div><p class="mode-body" data-i18n="mode_scratch_desc">Swipe away the surface and reveal the winner underneath.</p></div>
+      <div class="mode-card"><div class="mode-thumb"><span class="mode-symbol">★</span></div><div class="mode-name" data-i18n="mode_random_name">Random</div><p class="mode-body" data-i18n="mode_random_desc">A fast no-ceremony pick when you want the answer instantly.</p></div>
+    </div>
+  </section>
+
+  <!-- WORKFLOW -->
+  <section class="section wrap" id="workflow">
+    <div class="workflow-grid">
+      <div>
+        <p class="eyebrow" data-i18n="eyebrow_workflow">Fast setup</p>
+        <h2 style="font-size:50px;font-weight:300;letter-spacing:-2px;line-height:1.05;margin:12px 0 16px;color:#000;" data-i18n="workflow_h2">From item list to applause in three short steps.</h2>
+        <p style="font-size:17px;color:#636363;line-height:1.55;margin:0;" data-i18n="workflow_p">The flow stays simple on purpose: prepare your list, choose the mood, let the app handle the reveal.</p>
+        <ol class="steps">
+          <li><div><strong data-i18n="step1_title">Load your items</strong><p data-i18n="step1_desc">Add prizes manually, paste a bulk list, or reuse a saved pack when the same event comes back.</p></div></li>
+          <li><div><strong data-i18n="step2_title">Pick the energy</strong><p data-i18n="step2_desc">Wheel, Gacha, Blindbox, Lottery, Ladder, Slots, Scratch, or Random — match the moment.</p></div></li>
+          <li><div><strong data-i18n="step3_title">Reveal and keep moving</strong><p data-i18n="step3_desc">Track winners, remove drawn prizes, keep history for rerolls or event records.</p></div></li>
+        </ol>
+      </div>
+      <div class="workflow-stage">
+        <img src="img/mac-gacha.png" alt="">
+        <img src="img/mac-winner.png" alt="">
+        <img src="img/mac-history.png" alt="">
+        <img src="img/mac-publish.png" alt="">
+      </div>
+    </div>
+  </section>
+
+  <!-- ORGANIZERS -->
+  <section class="section wrap" id="organizers">
+    <div class="organizer-grid">
+      <div class="organizer-media">
+        <img src="img/mac-winner.png" alt="">
+        <img src="img/mac-publish.png" alt="">
+        <img src="img/mac-history.png" alt="">
+        <img src="img/mac-gacha.png" alt="">
+      </div>
+      <div>
+        <p class="eyebrow" data-i18n="eyebrow_organizers">Organizer-first tools</p>
+        <h2 style="font-size:50px;font-weight:300;letter-spacing:-2px;line-height:1.05;margin:12px 0 16px;color:#000;" data-i18n="organizers_h2">Built for people running the room.</h2>
+        <p style="font-size:17px;color:#636363;line-height:1.55;margin:0;" data-i18n="organizers_p">Behind the show layer, Joy keeps the practical parts tight: reusable packs, win limits, bulk input, exports, clean history.</p>
+        <div class="feat-list">
+          <div class="feat"><strong data-i18n="feat1_title">Reusable item packs</strong><p data-i18n="feat1_desc">Save recurring prize sets once, then load again for classes, giveaways, or stream formats.</p></div>
+          <div class="feat"><strong data-i18n="feat2_title">15 built-in starter packs</strong><p data-i18n="feat2_desc">Tarot, poker cards, Magic 8 Ball, story starters, lunch picks, photo challenges — zero setup.</p></div>
+          <div class="feat"><strong data-i18n="feat3_title">Participant mode</strong><p data-i18n="feat3_desc">Pair a prize with a winner from a separate entrant pool when the draw needs structure.</p></div>
+          <div class="feat"><strong data-i18n="feat4_title">Winner history & exports</strong><p data-i18n="feat4_desc">Clear timeline of who won what. Export CSV or TXT when you need a record.</p></div>
+          <div class="feat"><strong data-i18n="feat5_title">Bulk setup and numbering</strong><p data-i18n="feat5_desc">Paste one-per-line lists, auto-generate numbered tickets, keep prep time short.</p></div>
+          <div class="feat"><strong data-i18n="feat6_title">Win limits and removals</strong><p data-i18n="feat6_desc">Stop the same name from coming back. Remove drawn prizes mid-event.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MASCOT -->
+  <section class="mascot wrap">
+    <img src="img/hamster_celebrate.png" alt="">
+    <div class="mascot-text">
+      <span data-i18n="mascot_line1">A small companion for the win.</span>
+      <span data-i18n="mascot_line2">The hamster shows up in select modes to keep the celebration warm.</span>
+    </div>
+  </section>
+
+  <!-- AUDIENCES -->
+  <section class="section wrap" id="audiences">
+    <div class="section-head">
+      <p class="eyebrow" data-i18n="eyebrow_audiences">Where it fits</p>
+      <h2 data-i18n="audiences_h2">Made for live moments.</h2>
+      <p data-i18n="audiences_p">Playful enough for a party. Reliable enough for structured draws.</p>
+    </div>
+    <div class="aud-grid">
+      <div class="aud"><strong data-i18n="aud1_title">Classrooms and clubs</strong><p data-i18n="aud1_desc">Student picks, review games, reward draws, team activities — without wasting setup time.</p></div>
+      <div class="aud"><strong data-i18n="aud2_title">Streams and stage events</strong><p data-i18n="aud2_desc">Animated reveals that read on screen, with winner tracking under control.</p></div>
+      <div class="aud"><strong data-i18n="aud3_title">Parties and giveaways</strong><p data-i18n="aud3_desc">Bring more ceremony to small prizes, raffles, and audience moments.</p></div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section wrap" id="faq">
+    <div class="section-head">
+      <p class="eyebrow" data-i18n="eyebrow_faq">Questions</p>
+      <h2 data-i18n="faq_h2">What people ask before going live.</h2>
+    </div>
+    <div class="faq-list">
+      <details><summary data-i18n="faq1_q">Can I draw prizes, people, or both?</summary><p data-i18n="faq1_a">Both. Use it for item-only draws, or turn on Participant mode to pair prizes with a separate list of people.</p></details>
+      <details><summary data-i18n="faq2_q">How do I stop the same winner from appearing twice?</summary><p data-i18n="faq2_a">Use the remove-winner option for items, or set win limits in Participant mode when the same person should not be selected again.</p></details>
+      <details><summary data-i18n="faq3_q">Can I prepare lists before an event starts?</summary><p data-i18n="faq3_a">Yes. Type items manually, paste one-per-line lists, auto-generate numbered entries, and save reusable packs for later.</p></details>
+      <details><summary data-i18n="faq4_q">Will my packs and history stay on this device?</summary><p data-i18n="faq4_a">Yes. The app stores its working data locally on the device unless you explicitly export or share it.</p></details>
+      <details><summary data-i18n="faq5_q">Can I review or export results afterward?</summary><p data-i18n="faq5_a">Yes. Winner history stays available in the app, and you can export data as CSV or TXT.</p></details>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta wrap" id="download">
+    <div class="cta-glow"></div>
+    <div class="cta-card">
+      <p class="eyebrow" data-i18n="eyebrow_cta">Free to try. Download today.</p>
+      <h2 data-i18n="cta_h2">Win something good.</h2>
+      <p data-i18n="cta_p">Eight modes. Fifteen starter packs. Ten locales. One small companion. Ready in under a minute.</p>
+      <div class="ctas">
+        <a class="btn btn-filled" href="redirect.html" style="padding:14px 28px;font-size:16px" data-i18n="cta_btn">Download App Now</a>
+        <a class="btn btn-ghost" href="#modes" style="padding:14px 22px;font-size:16px" data-i18n="cta_see_modes">See the modes</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="foot">
+  <div class="foot-grid">
+    <div>
+      <a class="brand" href="#top" style="text-decoration:none">
+        <img src="img/logo.png" alt="" style="width:36px;height:36px;border-radius:9px">
+        <span class="brand-name" style="font-size:20px">Joy Prize Draw</span>
+      </a>
+      <p class="foot-tag" data-i18n="foot_tag">A polished prize-draw experience for classrooms, parties, streams, and live events.</p>
+    </div>
+    <div class="foot-cols">
+      <div>
+        <strong data-i18n="foot_product">Product</strong>
+        <a href="#modes" data-i18n="foot_modes">Draw modes</a>
+        <a href="#workflow" data-i18n="foot_workflow">Workflow</a>
+        <a href="redirect.html" data-i18n="foot_download">Download</a>
+      </div>
+      <div>
+        <strong data-i18n="foot_trust">Trust</strong>
+        <a href="privacy.html" data-i18n="foot_privacy">Privacy</a>
+        <a href="data-deletion.html" data-i18n="foot_deletion">Data deletion</a>
+      </div>
+      <div>
+        <strong data-i18n="foot_contact">Contact</strong>
+        <a href="mailto:publish@ryantsai.com">Support</a>
+      </div>
+    </div>
+  </div>
+  <div class="foot-strip"></div>
+  <div class="foot-fine">
+    <span data-i18n="foot_copyright">© 2026 Joy Prize Draw</span>
+  </div>
+</footer>
+
+</body>
 </html>
